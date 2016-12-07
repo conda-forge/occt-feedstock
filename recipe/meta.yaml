@@ -8,7 +8,7 @@ source:
   sha256: 1000486ada9dc48e766215c70e38982612780a9a7ccb113fd403aa207b8fabdc
 
 build:
-  number: 0
+  number: 1
   skip: true                              # [win and not py35]
 
   features:
@@ -58,4 +58,3 @@ about:
 extra:
   recipe-maintainers:
     - looooo
-
