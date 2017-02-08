@@ -9,7 +9,7 @@ source:
 
 build:
   number: 2
-  skip: true                              # [win and not py35]
+  skip: true                              # [(win and not py35) or osx]
 
   features:
     - occt7.0.0
