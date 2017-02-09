@@ -8,8 +8,8 @@ source:
   sha256: 1000486ada9dc48e766215c70e38982612780a9a7ccb113fd403aa207b8fabdc
 
 build:
-  number: 1
-  skip: true                              # [win and not py35]
+  number: 2
+  skip: true                              # [(win and not py35) or osx]
 
   features:
     - occt7.0.0
@@ -25,12 +25,12 @@ requirements:
     - cmake                               # [unix]
     - ninja                               # [win]
     - toolchain                           # [osx]
-    - freetype 2.6.*
+    - freetype 2.7.*
     - tk 8.5.*
     - freeimage                           # [unix]
     - tbb                                 # [unix]
   run:
-    - freetype 2.6.*
+    - freetype 2.7.*
     - tk 8.5.*
     - freeimage                           # [unix]
     - tbb                                 # [unix]
