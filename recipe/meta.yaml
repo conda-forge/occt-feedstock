@@ -9,14 +9,14 @@ source:
 
 build:
   number: 0
-  skip: true                              # [(win and not py35) or osx]
+  skip: true                              # [(win and not py36) or osx]
 
   features:
     - occt7.2.0
-    - vc14                                # [win and py35]
+    - vc14                                # [win and py36]
 
   track_features:
-    - vc14                                # [win and py35]
+    - vc14                                # [win and py36]
     - occt7.2.0
 
 requirements:
