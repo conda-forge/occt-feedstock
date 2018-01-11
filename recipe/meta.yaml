@@ -3,9 +3,9 @@ package:
   version: 7.2.0
 
 source:
-  fn: occ.tar.gz
-  url: https://github.com/looooo/occt-feedstock/releases/download/7.2.0/opencascade-7.2.0.tgz
-  sha256: 245e344b2cf8a6e0a7d9f45d5d807f8ef48607bcd7a6d763ba2d7b861fa55249
+  fn: occt.tar.gz
+  url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=82af2baefa166a066b30ee6e0382965d83b90ff1;sf=tgz
+  sha256: 9ac0acc14b906c4131f7fdbc1bb00fba58e39bfe164d1b034be81a5e7ba2a7c7
 
 build:
   number: 0
