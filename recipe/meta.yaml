@@ -9,23 +9,25 @@ source:
 
 build:
   number: 0
-  skip: true                              # [(win and not py36)]
+  skip: true  # [(win and not py36)]
 
 requirements:
   build:
     - toolchain
     - cmake
-    - ninja                               # [win]
-    - python                              # [win]
+    - ninja  # [win]
+    - python  # [win]
+    - vc14  # [win and py>=35]
     - freetype 2.8.1
     - tk 8.6.*
-    - freeimage                           # [unix]
-    - tbb                                 # [unix]
+    - freeimage  # [unix]
+    - tbb  # [unix]
   run:
+    - vc14  # [win and py>=35]
     - freetype 2.8.1
     - tk 8.6.*
-    - freeimage                           # [unix]
-    - tbb                                 # [unix]
+    - freeimage  # [unix]
+    - tbb  # [unix]
 
 test:
   requires:
