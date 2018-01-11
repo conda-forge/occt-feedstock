@@ -9,7 +9,7 @@ source:
 
 build:
   number: 0
-  skip: true                              # [(win and not py36) or osx]
+  skip: true                              # [(win and not py36)]
 
 requirements:
   build:
