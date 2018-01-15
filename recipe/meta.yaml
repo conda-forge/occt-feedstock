@@ -17,15 +17,17 @@ requirements:
     - cmake
     - ninja  # [win]
     - python  # [win]
-    - vc14  # [win and py>=35]
+    - vc 14  # [win and py>=35]
     - freetype 2.8.1
-    - tk 8.6.*
+    - tk 8.6.*  # [linux]
+    - tk 8.5.*  # [win or osx]
     - freeimage  # [unix]
     - tbb  # [unix]
   run:
-    - vc14  # [win and py>=35]
+    - vc 14  # [win and py>=35]
     - freetype 2.8.1
-    - tk 8.6.*
+    - tk 8.6.*  # [linux]
+    - tk 8.5.*  # [win or osx]
     - freeimage  # [unix]
     - tbb  # [unix]
 
