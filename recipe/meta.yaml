@@ -19,25 +19,21 @@ requirements:
     - python  # [win]
     - vc 14  # [win and py>=35]
     - freetype 2.8.1
-    - tk 8.6.*  # [linux]
-    - tk 8.5.*  # [win or osx]
     - freeimage  # [unix]
     - tbb  # [unix]
   run:
     - vc 14  # [win and py>=35]
     - freetype 2.8.1
-    - tk 8.6.*  # [linux]
-    - tk 8.5.*  # [win or osx]
     - freeimage  # [unix]
     - tbb  # [unix]
 
-test:
-  requires:
-  - python {{ environ['PY_VER'] + '*' }}  # [win]
-  commands:
-    - which draw.sh                       # [unix]
-    - which DRAWEXE                       # [unix]
-    - where /r "%PREFIX%" DRAWEXE.exe     # [win]
+# test:
+#   requires:
+#   - python {{ environ['PY_VER'] + '*' }}  # [win]
+#   commands:
+#     - which draw.sh                       # [unix]
+#     - which DRAWEXE                       # [unix]
+#     - where /r "%PREFIX%" DRAWEXE.exe     # [win]
 
 about:
   home: https://www.opencascade.com/
