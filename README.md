@@ -14,14 +14,16 @@ Open Cascade Technology (OCCT), formerly called CAS.CADE is an open source softw
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/occt-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/occt-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/occt-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/occt-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/occt-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/occt-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/occt-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/occt-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/occt-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/occt-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/occt-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/occt-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/occt/badges/version.svg)](https://anaconda.org/conda-forge/occt)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/occt/badges/downloads.svg)](https://anaconda.org/conda-forge/occt)
+
+[![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/occt.svg)](https://anaconda.org/conda-forge/occt)
+[![Conda Version](https://img.shields.io/conda/vn/conda-forge/occt.svg)](https://anaconda.org/conda-forge/occt)
+[![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/occt.svg)](https://anaconda.org/conda-forge/occt)
 
 Installing occt
 ===============
