@@ -5,7 +5,7 @@ if [ `uname` == Darwin ]; then
     CXXFLAGS="$CXXFLAGS -std=c++11"
 fi
 
-cmake .. \
+cmake -G "Ninja" \
       -DCMAKE_INSTALL_PREFIX=$PREFIX \
       -DCMAKE_PREFIX_PATH=$PREFIX \
       -D3RDPARTY_DIR=$PREFIX \
@@ -13,6 +13,6 @@ cmake .. \
       -DUSE_TBB=ON \
       -DUSE_FREEIMAGE=ON \
       -DCMAKE_BUILD_TYPE="Release" \
+      ..
 
-make -j${CPU_COUNT} 2>&1 | tee output.txt
-make -j${CPU_COUNT} install
+ninja install
