@@ -1,52 +1,56 @@
 package:
-  name: occt
-  version: 7.2.0
+    name: occt
+    version: 7.2.0
 
 source:
-  fn: occt.tar.gz
-  url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=82af2baefa166a066b30ee6e0382965d83b90ff1;sf=tgz
-  sha256: 9ac0acc14b906c4131f7fdbc1bb00fba58e39bfe164d1b034be81a5e7ba2a7c7
+    fn: occt.tar.gz
+    url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=230b2bff0030e4b3f378d7a34c678a47ec886ec4;sf=tgz
+    sha256: a17a876b9b6a173b48f9e063fcd39ef520c4c7018935458d42a0ac943296586b
 
 build:
-  number: 1
-  skip: true  # [(win and not py36)]
+    number: 2
+    skip: true  # [(win and not py36) or osx]
+    features:
+        - vc14  # [win and py36]
 
 requirements:
-  build:
-    - toolchain
-    - cmake
-    - ninja  # [win]
-    - python  # [win]
-    - vc 14  # [win and py>=35]
-    - freetype 2.8.1
-    - freeimage  # [unix]
-    - tbb  # [unix]
-  run:
-    - vc 14  # [win and py>=35]
-    - freetype 2.8.1
-    - freeimage  # [unix]
-    - tbb  # [unix]
+    build:
+        - toolchain
+        - cmake
+        - ninja
+        - python  # [win]
+        - vc 14  # [win]
+        - freetype 2.8.*
+        - freeimage  # [unix]
+        - tbb  # [unix]
+    run:
+        - vc 14  # [win]
+        - freetype 2.8.*
+        - freeimage  # [unix]
+        - tbb  # [unix]
 
-# test:
-#   requires:
-#   - python {{ environ['PY_VER'] + '*' }}  # [win]
-#   commands:
-#     - which draw.sh                       # [unix]
-#     - which DRAWEXE                       # [unix]
-#     - where /r "%PREFIX%" DRAWEXE.exe     # [win]
+test:
+    requires:
+        - python {{ environ['PY_VER'] + '*' }}  # [win]
+        - ninja
+        - cmake
+    files:
+        - CMakeLists.txt  # [linux]
+    commands:
+        - cmake .
 
 about:
-  home: https://www.opencascade.com/
-  license_family: LGPL
-  license: LGPL-2.1
-  license_file: LICENSE_LGPL_21.txt
-  summary: this is the occ (opencascade) CAD-Kernel
-  description: Open Cascade Technology (OCCT), formerly called CAS.CADE
-               is an open source software development platform for 3D CAD,
-               CAM, CAE, etc. that is developed and supported by Open Cascade SAS.
-  doc_url: https://www.opencascade.com/content/documentation
-  dev_url: http://git.dev.opencascade.org/gitweb/?p=occt.git
+    home: https://www.opencascade.com/
+    license_family: LGPL
+    license: LGPL-2.1
+    license_file: LICENSE_LGPL_21.txt
+    summary: this is the occ (opencascade) CAD-Kernel
+    description: Open Cascade Technology (OCCT), formerly called CAS.CADE
+                 is an open source software development platform for 3D CAD,
+                 CAM, CAE, etc. that is developed and supported by Open Cascade SAS.
+    doc_url: https://www.opencascade.com/content/documentation
+    dev_url: http://git.dev.opencascade.org/gitweb/?p=occt.git
 
 extra:
-  recipe-maintainers:
-    - looooo
+    recipe-maintainers:
+      - looooo

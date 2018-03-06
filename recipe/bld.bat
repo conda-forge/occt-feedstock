@@ -7,7 +7,6 @@ cmake .. -G "Ninja" ^
     -DINSTALL_DIR_LAYOUT="Unix" ^
     -DBUILD_MODULE_Draw=OFF ^
     -D3RDPARTY_DIR:FILEPATH="%LIBRARY_PREFIX%" ^
-    -D3RDPARTY_TK_DIR:FILEPATH="%LIBRARY_PREFIX%" ^
     -DCMAKE_BUILD_TYPE="Release"
 
 if errorlevel 1 exit 1
