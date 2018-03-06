@@ -35,9 +35,9 @@ test:
         - ninja
         - cmake
     files:
-        - CMakeLists.txt  # [linux]
+        - CMakeLists.txt
     commands:
-        - cmake .
+        - cmake -G "Ninja" .
 
 about:
     home: https://www.opencascade.com/
