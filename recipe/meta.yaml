@@ -31,13 +31,14 @@ requirements:
 
 test:
     requires:
-        - python {{ environ['PY_VER'] + '*' }}  # [win]
-        - ninja
-        - cmake
+        - ninja  # [linux]
+        - cmake  # [linux]
     files:
-        - CMakeLists.txt
+        - CMakeLists.txt  # [linux]
     commands:
-        - cmake -G "Ninja" .
+        - cmake -G "Ninja" .  # [linux]
+        # not working on windows, because this is a test env
+        # without vs-setup
 
 about:
     home: https://www.opencascade.com/
