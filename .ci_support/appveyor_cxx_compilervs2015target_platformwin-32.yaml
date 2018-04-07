@@ -1,0 +1,6 @@
+cxx_compiler:
+- vs2015
+freetype:
+- 2.8.1
+target_platform:
+- win-32

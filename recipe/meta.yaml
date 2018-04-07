@@ -8,24 +8,18 @@ source:
     sha256: a17a876b9b6a173b48f9e063fcd39ef520c4c7018935458d42a0ac943296586b
 
 build:
-    number: 2
+    number: 3
     skip: true  # [(win and not py36) or osx]
-    features:
-        - vc14  # [win and py36]
+    run_exports:
+        - {{ pin_subpackage('occt', max_pin='x.x') }}
 
 requirements:
     build:
-        - toolchain
+        - {{ compiler('cxx') }}
         - cmake
         - ninja
-        - python  # [win]
-        - vc 14  # [win]
-        - freetype 2.8.*
-        - freeimage  # [unix]
-        - tbb  # [unix]
-    run:
-        - vc 14  # [win]
-        - freetype 2.8.*
+    host:
+        - freetype
         - freeimage  # [unix]
         - tbb  # [unix]
 
@@ -33,12 +27,11 @@ test:
     requires:
         - ninja  # [linux]
         - cmake  # [linux]
+        - {{ compiler('cxx') }}
     files:
-        - CMakeLists.txt  # [linux]
+        - CMakeLists.txt
     commands:
-        - cmake -G "Ninja" .  # [linux]
-        # not working on windows, because this is a test env
-        # without vs-setup
+        - cmake -G "Ninja" .
 
 about:
     home: https://www.opencascade.com/
