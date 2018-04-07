@@ -1,0 +1,4 @@
+cxx_compiler:
+- gxx
+freetype:
+- 2.8.1
