@@ -8,7 +8,7 @@ source:
     sha256: a17a876b9b6a173b48f9e063fcd39ef520c4c7018935458d42a0ac943296586b
 
 build:
-    number: 2
+    number: 3
     skip: true  # [win and not py36]
     features:
         - vc14  # [win and py36]
