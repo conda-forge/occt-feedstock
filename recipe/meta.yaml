@@ -9,7 +9,7 @@ source:
 
 build:
     number: 2
-    skip: true  # [(win and not py36) or osx]
+    skip: true  # [win and not py36]
     features:
         - vc14  # [win and py36]
 
