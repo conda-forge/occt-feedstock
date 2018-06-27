@@ -1,44 +1,45 @@
+{% set name = "occt" %}
+{% set version = "7.3.0" %}
+{% set commit = "42da0d5115bff683c6b596e66cdeaff957f81e7d" %}
+{% set sha256 = "04c58fac2bdfa79431ed508f984a79f2d788d3af7aff938b0d5b9a280e2d7395" %}
+
+
 package:
-    name: occt
-    version: 7.2.0
+    name: {{ name }}
+    version: {{ version }}
 
 source:
-    fn: occt.tar.gz
-    url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=230b2bff0030e4b3f378d7a34c678a47ec886ec4;sf=tgz
-    sha256: a17a876b9b6a173b48f9e063fcd39ef520c4c7018935458d42a0ac943296586b
+    fn: {{ name }}-{{ version }}.tar.gz
+    url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h={{ commit }};sf=tgz
+    sha256: {{ sha256 }}
 
 build:
-    number: 3
+    number: 0
     skip: true  # [win and not py36]
-    features:
-        - vc14  # [win and py36]
 
 requirements:
     build:
-        - toolchain
+        - {{ compiler('cxx') }}
         - cmake
         - ninja
+    host:
         - python  # [win]
-        - vc 14  # [win]
-        - freetype 2.8.*
+        - freetype
         - freeimage  # [unix]
         - tbb  # [unix]
     run:
-        - vc 14  # [win]
-        - freetype 2.8.*
+        - freetype
         - freeimage  # [unix]
         - tbb  # [unix]
 
 test:
     requires:
-        - ninja  # [linux]
-        - cmake  # [linux]
+        - ninja
+        - cmake
     files:
-        - CMakeLists.txt  # [linux]
+        - CMakeLists.txt
     commands:
-        - cmake -G "Ninja" .  # [linux]
-        # not working on windows, because this is a test env
-        # without vs-setup
+        - cmake -G "Ninja" .
 
 about:
     home: https://www.opencascade.com/
