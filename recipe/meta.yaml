@@ -14,7 +14,7 @@ source:
     sha256: {{ sha256 }}
 
 build:
-    number: 0
+    number: 1
     skip: true  # [win and not py36]
 
 requirements:
@@ -30,7 +30,7 @@ requirements:
     run:
         - freetype
         - freeimage  # [unix]
-        - tbb  # [unix]
+        - {{ pin_compatible("tbb") }}  # [unix]
 
 test:
     requires:
