@@ -14,7 +14,7 @@ source:
     sha256: {{ sha256 }}
 
 build:
-    number: 1
+    number: 1001
     skip: true  # [win and not py36]
 
 requirements:
