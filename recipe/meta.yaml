@@ -26,12 +26,10 @@ requirements:
         - python  # [win]
         - freetype
         - freeimage  # [unix]
-        - tbb-devel
-        - tbb
+        - tbb-devel 2018.0.5
     run:
         - freetype
         - freeimage  # [unix]
-        - {{ pin_compatible("tbb") }}
 
 test:
     requires:
