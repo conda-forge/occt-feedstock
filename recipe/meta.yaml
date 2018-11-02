@@ -20,6 +20,7 @@ build:
 requirements:
     build:
         - {{ compiler('cxx') }}
+        - {{ cdt('mesa-libgl-devel') }}  # [linux]
         - cmake
         - ninja
     host:
@@ -27,9 +28,15 @@ requirements:
         - freetype
         - freeimage  # [unix]
         - tbb-devel 2018.0.5
+        - xorg-libxt  # [linux]
+        - xorg-libxmu  # [linux]
+        - xorg-libxi  # [linux]
     run:
         - freetype
         - freeimage  # [unix]
+        - xorg-libxt  # [linux]
+        - xorg-libxmu  # [linux]
+        - xorg-libxi  # [linux]
 
 test:
     requires:
