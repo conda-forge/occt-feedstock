@@ -15,7 +15,6 @@ source:
 
 build:
     number: 1001
-    skip: true  # [win and not py36]
 
 requirements:
     build:
@@ -24,7 +23,6 @@ requirements:
         - cmake
         - ninja
     host:
-        - python  # [win]
         - freetype
         - freeimage  # [unix]
         - tbb-devel
