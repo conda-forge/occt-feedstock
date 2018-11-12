@@ -27,7 +27,7 @@ requirements:
         - python  # [win]
         - freetype
         - freeimage  # [unix]
-        - tbb-devel 2018.0.5
+        - tbb-devel
         - xorg-libxt  # [linux]
         - xorg-libxmu  # [linux]
         - xorg-libxi  # [linux]
