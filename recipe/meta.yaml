@@ -3,59 +3,59 @@
 {% set commit = "42da0d5115bff683c6b596e66cdeaff957f81e7d" %}
 {% set sha256 = "04c58fac2bdfa79431ed508f984a79f2d788d3af7aff938b0d5b9a280e2d7395" %}
 
-
 package:
-    name: {{ name }}
-    version: {{ version }}
+  name: {{ name }}
+  version: {{ version }}
 
 source:
-    fn: {{ name }}-{{ version }}.tar.gz
-    url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h={{ commit }};sf=tgz
-    sha256: {{ sha256 }}
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h={{ commit }};sf=tgz
+  sha256: {{ sha256 }}
 
 build:
-    number: 1003
+  number: 1003
 
 requirements:
-    build:
-        - {{ compiler('cxx') }}
-        - {{ cdt('mesa-libgl-devel') }}  # [linux]
-        - {{ cdt('libxi-devel') }}           # [linux]
-        - cmake
-        - ninja
-    host:
-        - freetype
-        - freeimage  # [unix]
-        - tbb-devel
-        - xorg-libxt  # [linux]
-        - xorg-libxmu  # [linux]
-    run:
-        - freetype
-        - freeimage  # [unix]
-        - xorg-libxt  # [linux]
-        - xorg-libxmu  # [linux]
+  build:
+    - {{ compiler('cxx') }}
+    - {{ cdt('mesa-libgl-devel') }}  # [linux]
+    - {{ cdt('libxi-devel') }}       # [linux]
+    - cmake
+    - ninja
+  host:
+    - freetype
+    - freeimage  # [unix]
+    - tbb-devel
+    - xorg-libxt  # [linux]
+    - xorg-libxmu  # [linux]
+  run:
+    - freetype
+    - freeimage  # [unix]
+    - xorg-libxt  # [linux]
+    - xorg-libxmu  # [linux]
 
 test:
-    requires:
-        - ninja
-        - cmake
-    files:
-        - CMakeLists.txt
-    commands:
-        - cmake -G "Ninja" .
+  requires:
+    - ninja
+    - cmake
+  files:
+    - CMakeLists.txt
+  commands:
+    - cmake -G "Ninja" .
 
 about:
-    home: https://www.opencascade.com/
-    license_family: LGPL
-    license: LGPL-2.1
-    license_file: LICENSE_LGPL_21.txt
-    summary: this is the occ (opencascade) CAD-Kernel
-    description: Open Cascade Technology (OCCT), formerly called CAS.CADE
-                 is an open source software development platform for 3D CAD,
-                 CAM, CAE, etc. that is developed and supported by Open Cascade SAS.
-    doc_url: https://www.opencascade.com/content/documentation
-    dev_url: http://git.dev.opencascade.org/gitweb/?p=occt.git
+  home: https://www.opencascade.com/
+  license_family: LGPL
+  license: LGPL-2.1
+  license_file: LICENSE_LGPL_21.txt
+  summary: this is the occ (opencascade) CAD-Kernel
+  description: |
+    Open Cascade Technology (OCCT), formerly called CAS.CADE
+    is an open source software development platform for 3D CAD,
+    CAM, CAE, etc. that is developed and supported by Open Cascade SAS.
+  doc_url: https://www.opencascade.com/content/documentation
+  dev_url: http://git.dev.opencascade.org/gitweb/?p=occt.git
 
 extra:
-    recipe-maintainers:
-      - looooo
+  recipe-maintainers:
+    - looooo
