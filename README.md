@@ -9,7 +9,10 @@ Feedstock license: BSD 3-Clause
 
 Summary: this is the occ (opencascade) CAD-Kernel
 
-Open Cascade Technology (OCCT), formerly called CAS.CADE is an open source software development platform for 3D CAD, CAM, CAE, etc. that is developed and supported by Open Cascade SAS.
+Open Cascade Technology (OCCT), formerly called CAS.CADE
+is an open source software development platform for 3D CAD,
+CAM, CAE, etc. that is developed and supported by Open Cascade SAS.
+
 
 Current build status
 ====================
