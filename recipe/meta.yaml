@@ -11,9 +11,11 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h={{ commit }};sf=tgz
   sha256: {{ sha256 }}
+  patches:
+    - boolean_intersection.patch  # see https://github.com/conda-forge/freecad-feedstock/pull/23
 
 build:
-  number: 1003
+  number: 1004
 
 requirements:
   build:
