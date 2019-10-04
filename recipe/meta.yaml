@@ -24,8 +24,9 @@ requirements:
     - ninja
   host:
     - freetype
-    - freeimage  # [unix]
+    - fontconfig
     - tbb-devel
+    - freeimage  # [unix]
     - xorg-libxt  # [linux]
     - xorg-libxmu  # [linux]
   run:
