@@ -1,6 +1,6 @@
 {% set name = "occt" %}
-{% set version = "7.3.0" %}
-{% set commit = "42da0d5115bff683c6b596e66cdeaff957f81e7d" %}
+{% set version = "7.4.0" %}
+{% set commit = "fd47711d682be943f0e0a13d1fb54911b0499c31" %}
 {% set sha256 = "04c58fac2bdfa79431ed508f984a79f2d788d3af7aff938b0d5b9a280e2d7395" %}
 
 package:
@@ -10,12 +10,11 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h={{ commit }};sf=tgz
-  sha256: {{ sha256 }}
-  patches:
-    - boolean_intersection.patch  # see https://github.com/conda-forge/freecad-feedstock/pull/23
+  # patches:
+  #   - boolean_intersection.patch  # see https://github.com/conda-forge/freecad-feedstock/pull/23
 
 build:
-  number: 1004
+  number: 0
 
 requirements:
   build:
