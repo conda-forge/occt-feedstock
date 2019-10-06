@@ -31,6 +31,7 @@ requirements:
     - xorg-libxmu  # [linux]
   run:
     - freetype
+    - fontconfig
     - freeimage  # [unix]
     - xorg-libxt  # [linux]
     - xorg-libxmu  # [linux]
