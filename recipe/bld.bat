@@ -8,7 +8,7 @@ cmake -G "Ninja" ^
       -D BUILD_MODULE_Draw=OFF ^
       -D 3RDPARTY_DIR:FILEPATH="%LIBRARY_PREFIX%" ^
       -D CMAKE_BUILD_TYPE="Release" ^
-      -D USE_TBB=ON
+      -D USE_TBB=ON ^
       .. 
 
 if errorlevel 1 exit 1
