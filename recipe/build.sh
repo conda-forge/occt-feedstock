@@ -1,18 +1,13 @@
 mkdir build
 cd build
 
-if [ `uname` == Darwin ]; then
-    CXXFLAGS="$CXXFLAGS -std=c++11"
-fi
-
 cmake -G "Ninja" \
-      -DCMAKE_INSTALL_PREFIX=$PREFIX \
-      -DCMAKE_PREFIX_PATH=$PREFIX \
-      -D3RDPARTY_DIR=$PREFIX \
-      -DBUILD_MODULE_Draw=OFF \
-      -DUSE_TBB=ON \
-      -DUSE_FREEIMAGE=ON \
-      -DCMAKE_BUILD_TYPE="Release" \
+      -D CMAKE_INSTALL_PREFIX:FILEPATH=$PREFIX \
+      -D CMAKE_PREFIX_PATH:FILEPATH=$PREFIX \
+      -D 3RDPARTY_DIR:FILEPATH=$PREFIX \
+      -D BUILD_MODULE_Draw:BOOL=OFF \
+      -D USE_TBB:BOOL=ON \
+      -D CMAKE_BUILD_TYPE:STRING="Release" \
       ..
 
 ninja install
