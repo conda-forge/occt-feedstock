@@ -9,11 +9,9 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h={{ commit }};sf=tgz
   sha256: af73c89ade0467ca7351dc445e4bd20832387da1e205f6955bc9356ab7d9f22b
-  # patches:
-  #   - boolean_intersection.patch  # see https://github.com/conda-forge/freecad-feedstock/pull/23
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -26,13 +24,11 @@ requirements:
     - freetype
     - fontconfig
     - tbb-devel
-    - freeimage  # [unix]
     - xorg-libxt  # [linux]
     - xorg-libxmu  # [linux]
   run:
     - freetype
     - fontconfig
-    - freeimage  # [unix]
     - xorg-libxt  # [linux]
     - xorg-libxmu  # [linux]
 
