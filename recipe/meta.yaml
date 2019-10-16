@@ -15,7 +15,7 @@ source:
     - boolean_intersection.patch  # see https://github.com/conda-forge/freecad-feedstock/pull/23
 
 build:
-  number: 1004
+  number: 1005
 
 requirements:
   build:
@@ -26,13 +26,11 @@ requirements:
     - ninja
   host:
     - freetype
-    - freeimage  # [unix]
     - tbb-devel
     - xorg-libxt  # [linux]
     - xorg-libxmu  # [linux]
   run:
     - freetype
-    - freeimage  # [unix]
     - xorg-libxt  # [linux]
     - xorg-libxmu  # [linux]
 
