@@ -11,6 +11,7 @@ source:
   sha256: af73c89ade0467ca7351dc445e4bd20832387da1e205f6955bc9356ab7d9f22b
   patches:
     - no-xmu.patch
+    - fix-private-linking.patch
 
 build:
   number: 1
