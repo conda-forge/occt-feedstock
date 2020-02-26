@@ -9,6 +9,7 @@ cmake -G "Ninja" ^
       -D 3RDPARTY_DIR:FILEPATH="%LIBRARY_PREFIX%" ^
       -D CMAKE_BUILD_TYPE="Release" ^
       -D USE_TBB=ON ^
+      -D BUILD_RELEASE_DISABLE_EXCEPTIONS=OFF ^
       .. 
 
 if errorlevel 1 exit 1

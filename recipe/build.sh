@@ -8,6 +8,7 @@ cmake -G "Ninja" \
       -D BUILD_MODULE_Draw:BOOL=OFF \
       -D USE_TBB:BOOL=ON \
       -D CMAKE_BUILD_TYPE:STRING="Release" \
+      -D BUILD_RELEASE_DISABLE_EXCEPTIONS=OFF \
       ..
 
 ninja install
