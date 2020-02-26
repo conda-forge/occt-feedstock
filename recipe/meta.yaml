@@ -1,20 +1,20 @@
 {% set name = "occt" %}
 {% set version = "7.4.0" %}
-{% set commit = "fd47711d682be943f0e0a13d1fb54911b0499c31" %}
+
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h={{ commit }};sf=tgz
-  sha256: af73c89ade0467ca7351dc445e4bd20832387da1e205f6955bc9356ab7d9f22b
+  url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=V{{ version.replace(".", "_") }};sf=tgz
+  sha256: 9614c2075cef53e30b25317fc8fcfb71d60a69181d562e1c56469ed8e54ad758
   patches:
     - no-xmu.patch
     - fix-private-linking.patch
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
