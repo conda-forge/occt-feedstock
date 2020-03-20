@@ -12,9 +12,10 @@ source:
   patches:
     - no-xmu.patch
     - fix-private-linking.patch
+    - fix-brepblend.patch
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
