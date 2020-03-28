@@ -1,17 +1,14 @@
-mkdir build
-cd build
-
-cmake -G "Ninja" ^
-      -D CMAKE_PREFIX_PATH:FILEPATH="%LIBRARY_PREFIX%" ^
-      -D CMAKE_INSTALL_PREFIX:FILEPATH="%LIBRARY_PREFIX%" ^
-      -D INSTALL_DIR_LAYOUT="Unix" ^
-      -D BUILD_MODULE_Draw=OFF ^
-      -D 3RDPARTY_DIR:FILEPATH="%LIBRARY_PREFIX%" ^
-      -D CMAKE_BUILD_TYPE="Release" ^
-      -D USE_TBB=ON ^
+cmake -S . -B build  -G Ninja ^
+      -D CMAKE_INSTALL_PREFIX:FILEPATH=$PREFIX ^
+      -D CMAKE_PREFIX_PATH:FILEPATH=$PREFIX ^
+      -D 3RDPARTY_DIR:FILEPATH=$PREFIX ^
+      -D BUILD_MODULE_Draw:BOOL=OFF ^
+      -D USE_TBB:BOOL=ON ^
+      -D CMAKE_BUILD_TYPE:STRING="Release" ^
       -D BUILD_RELEASE_DISABLE_EXCEPTIONS=OFF ^
-      .. 
+      -D USE_VTK:BOOL=ON
 
 if errorlevel 1 exit 1
-ninja install
+cmake --build build -- install
+
 if errorlevel 1 exit 1
