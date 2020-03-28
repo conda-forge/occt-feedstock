@@ -30,10 +30,12 @@ requirements:
     - fontconfig
     - tbb-devel
     - xorg-libxt  # [linux]
+    - vtk
   run:
     - freetype
     - fontconfig
     - xorg-libxt  # [linux]
+    - vtk
 
 test:
   requires:
