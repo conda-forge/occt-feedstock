@@ -9,6 +9,6 @@ cmake -S . -B build  -G Ninja ^
       -D USE_VTK:BOOL=ON
 
 if errorlevel 1 exit 1
-cmake --build build -- TKG3d TKBool TKXmlTObj TKStdL TKIVtk TKIVtkDraw TKViewerTest TKSTEP209 TKShHealing TKLCAF TKSTL TKFeat TKOffset TKGeomBase TKXCAF
+cmake --build build -- TKG3d TKBool TKXmlTObj TKStdL TKIVtk TKSTEP209 TKShHealing TKLCAF TKSTL TKFeat TKOffset TKGeomBase TKXCAF
 
 if errorlevel 1 exit 1
