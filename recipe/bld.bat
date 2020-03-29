@@ -12,3 +12,11 @@ if errorlevel 1 exit 1
 cmake --build build -- TKG3d TKBool TKXmlTObj TKStdL TKIVtk TKSTEP209 TKShHealing TKLCAF TKSTL TKFeat TKOffset TKGeomBase TKXCAF
 
 if errorlevel 1 exit 1
+FOR /f "tokens=2" %%R IN ('findstr "_COMPILER_ _STATIC_LIBRARY_" rules.ninja') DO (
+    ninja -t clean -r %%~R
+)
+
+if errorlevel 1 exit 1
+cmake --build build -- install
+
+if errorlevel 1 exit 1
