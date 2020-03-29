@@ -13,6 +13,7 @@ source:
     - no-xmu.patch
     - fix-private-linking.patch
     - fix-brepblend.patch
+    - vtk.patch
 
 build:
   number: 3
@@ -20,15 +21,15 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
-    - {{ cdt('libxi-devel') }}       # [linux]
-    - {{ cdt('libxext-devel') }}     # [linux]
     - cmake
     - ninja
   host:
     - freetype
     - fontconfig
     - tbb-devel
+    - {{ cdt('mesa-libgl-devel') }}  # [linux]
+    - {{ cdt('libxi-devel') }}       # [linux]
+    - {{ cdt('libxext-devel') }}     # [linux]
     - xorg-libxt  # [linux]
     - vtk
   run:
