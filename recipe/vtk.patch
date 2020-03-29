@@ -1,0 +1,13 @@
+--- opencascade-7.4.0.orig/src/TKIVtk/EXTERNLIB
++++ opencascade-7.4.0/src/TKIVtk/EXTERNLIB
+@@ -10,10 +10,3 @@
+ TKService
+ TKTopAlgo
+ TKV3d
+-vtkCommonCore
+-vtkRenderingCore
+-vtkRenderingOpenGL
+-vtkRenderingFreeType
+-vtkRenderingFreeTypeOpenGL
+-vtkFiltersGeneral
+-vtkInteractionStyle
