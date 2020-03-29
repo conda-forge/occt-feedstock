@@ -24,13 +24,13 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - ninja
+    - {{ cdt('mesa-libgl-devel') }}  # [linux]
+    - {{ cdt('libxi-devel') }}       # [linux]
+    - {{ cdt('libxext-devel') }}     # [linux]
   host:
     - freetype
     - fontconfig
     - tbb-devel
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
-    - {{ cdt('libxi-devel') }}       # [linux]
-    - {{ cdt('libxext-devel') }}     # [linux]
     - xorg-libxt  # [linux]
     - vtk
   run:
