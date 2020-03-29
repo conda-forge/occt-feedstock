@@ -13,7 +13,7 @@ source:
     - no-xmu.patch
     - fix-private-linking.patch
     - fix-brepblend.patch
-    - vtk.patch
+    - vtk.patch  # [linux]
     - cmake_policy.patch
 
 build:
