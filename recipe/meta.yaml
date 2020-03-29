@@ -14,6 +14,7 @@ source:
     - fix-private-linking.patch
     - fix-brepblend.patch
     - vtk.patch
+    - cmake_policy.patch
 
 build:
   number: 3
