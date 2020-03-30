@@ -1,4 +1,4 @@
-conda clean -a -y
+call conda clean -a -y
 cmake -S . -B build  -G Ninja ^
       -D CMAKE_INSTALL_PREFIX:FILEPATH=$PREFIX ^
       -D CMAKE_PREFIX_PATH:FILEPATH=$PREFIX ^
