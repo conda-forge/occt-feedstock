@@ -19,4 +19,5 @@ if errorlevel 1 exit 1
 
 cmake --build build -- install
 df -h
+bash -c "cd ../../..; find -exec ls -lh {} \; ;"
 if errorlevel 1 exit 1
