@@ -13,11 +13,10 @@ cmake -S . -B build  -G Ninja ^
       -D CMAKE_BUILD_TYPE:STRING="Release" ^
       -D BUILD_RELEASE_DISABLE_EXCEPTIONS=OFF ^
       -D USE_VTK:BOOL=ON
-df -h
-bash -c "cd ../../..; find"
+
 if errorlevel 1 exit 1
 
-cmake --build build -- install
+cmake --build build -- -v install
 df -h
-bash -c "cd ../../..; find -exec ls -lh {} \; ;"
+bash -c "find -iname \*.cxx.obj -exec ls -lh {} \; ;"
 if errorlevel 1 exit 1
