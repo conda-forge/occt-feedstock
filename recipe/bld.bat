@@ -2,6 +2,7 @@ dir
 rmdir /S /Q data
 rmdir /S /Q dox
 rmdir /S /Q samples
+df -h
 
 cmake -S . -B build  -G Ninja ^
       -D CMAKE_INSTALL_PREFIX:FILEPATH=$PREFIX ^
@@ -12,7 +13,8 @@ cmake -S . -B build  -G Ninja ^
       -D CMAKE_BUILD_TYPE:STRING="Release" ^
       -D BUILD_RELEASE_DISABLE_EXCEPTIONS=OFF ^
       -D USE_VTK:BOOL=ON
-
+df -h
+bash -c"cd ../../..; find"
 if errorlevel 1 exit 1
 
 cmake --build build -- install
