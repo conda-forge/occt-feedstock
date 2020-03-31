@@ -14,9 +14,9 @@ cmake -S . -B build  -G Ninja ^
       -D BUILD_RELEASE_DISABLE_EXCEPTIONS=OFF ^
       -D USE_VTK:BOOL=ON
 df -h
-bash -c"cd ../../..; find"
+bash -c "cd ../../..; find"
 if errorlevel 1 exit 1
 
 cmake --build build -- install
-
+df -h
 if errorlevel 1 exit 1
