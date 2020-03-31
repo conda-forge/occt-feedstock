@@ -1,4 +1,8 @@
-call conda clean -a -y
+dir
+rmdir /S /Q data
+rmdir /S /Q dox
+rmdir /S /Q samples
+
 cmake -S . -B build  -G Ninja ^
       -D CMAKE_INSTALL_PREFIX:FILEPATH=$PREFIX ^
       -D CMAKE_PREFIX_PATH:FILEPATH=$PREFIX ^
