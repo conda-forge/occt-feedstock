@@ -4,6 +4,8 @@ rmdir /S /Q dox
 rmdir /S /Q samples
 df -h
 
+set "CXXFLAGS=%CXXFLAGS:-GL=%"
+
 cmake -S . -B build  -G Ninja ^
       -D CMAKE_INSTALL_PREFIX:FILEPATH=$PREFIX ^
       -D CMAKE_PREFIX_PATH:FILEPATH=$PREFIX ^
