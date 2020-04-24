@@ -29,12 +29,14 @@ requirements:
     - {{ cdt('libxext-devel') }}     # [linux]
   host:
     - freetype
+    - freeimage 
     - fontconfig
     - tbb-devel
     - xorg-libxt  # [linux]
     - vtk
   run:
     - freetype
+    - freeimage
     - fontconfig
     - xorg-libxt  # [linux]
     - vtk
