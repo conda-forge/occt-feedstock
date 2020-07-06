@@ -5,7 +5,7 @@ Home: https://www.opencascade.com/
 
 Package license: LGPL-2.1
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: this is the occ (opencascade) CAD-Kernel
 
