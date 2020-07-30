@@ -17,7 +17,7 @@ source:
     - cmake_policy.patch
 
 build:
-  number: 6
+  number: 7
 
 requirements:
   build:
@@ -52,8 +52,7 @@ test:
 
 about:
   home: https://www.opencascade.com/
-  license_family: LGPL
-  license: LGPL-2.1
+  license: LGPL-2.1-only WITH OCCT-exception-1.0
   license_file: LICENSE_LGPL_21.txt
   summary: this is the occ (opencascade) CAD-Kernel
   description: |
