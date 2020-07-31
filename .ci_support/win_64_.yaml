@@ -8,11 +8,15 @@ fontconfig:
 - '2.13'
 freetype:
 - 2.9.1
+occt:
+- '7.4'
 pin_run_as_build:
   fontconfig:
     max_pin: x
   freetype:
     max_pin: x
+  occt:
+    max_pin: x.x
   vtk:
     max_pin: x.x.x
 target_platform:

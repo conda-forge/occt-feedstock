@@ -1,9 +1,9 @@
-About occt
-==========
+About occt-split
+================
 
 Home: https://www.opencascade.com/
 
-Package license: LGPL-2.1
+Package license: LGPL-2.1-only WITH OCCT-exception-1.0
 
 Feedstock license: BSD-3-Clause
 
@@ -67,10 +67,10 @@ Current release info
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-occt-green.svg)](https://anaconda.org/conda-forge/occt) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/occt.svg)](https://anaconda.org/conda-forge/occt) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/occt.svg)](https://anaconda.org/conda-forge/occt) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/occt.svg)](https://anaconda.org/conda-forge/occt) |
 
-Installing occt
-===============
+Installing occt-split
+=====================
 
-Installing `occt` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `occt-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -127,17 +127,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating occt-feedstock
-=======================
+Updating occt-split-feedstock
+=============================
 
-If you would like to improve the occt recipe or build a new
+If you would like to improve the occt-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/occt-feedstock are
+Note that all branches in the conda-forge/occt-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
