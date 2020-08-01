@@ -11,3 +11,9 @@
 -vtkRenderingFreeTypeOpenGL
 -vtkFiltersGeneral
 -vtkInteractionStyle
++vtkCommonCore-9.0
++vtkRenderingCore-9.0
++vtkRenderingOpenGL2-9.0
++vtkRenderingFreeType-9.0
++vtkFiltersGeneral-9.0
++vtkInteractionStyle-9.0
