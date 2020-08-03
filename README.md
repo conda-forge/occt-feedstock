@@ -66,6 +66,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-occt-green.svg)](https://anaconda.org/conda-forge/occt) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/occt.svg)](https://anaconda.org/conda-forge/occt) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/occt.svg)](https://anaconda.org/conda-forge/occt) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/occt.svg)](https://anaconda.org/conda-forge/occt) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-occt--vtk-green.svg)](https://anaconda.org/conda-forge/occt-vtk) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/occt-vtk.svg)](https://anaconda.org/conda-forge/occt-vtk) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/occt-vtk.svg)](https://anaconda.org/conda-forge/occt-vtk) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/occt-vtk.svg)](https://anaconda.org/conda-forge/occt-vtk) |
 
 Installing occt-split
 =====================
@@ -76,10 +77,10 @@ Installing `occt-split` from the `conda-forge` channel can be achieved by adding
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `occt` can be installed with:
+Once the `conda-forge` channel has been enabled, `occt, occt-vtk` can be installed with:
 
 ```
-conda install occt
+conda install occt occt-vtk
 ```
 
 It is possible to list all of the versions of `occt` available on your platform with:
