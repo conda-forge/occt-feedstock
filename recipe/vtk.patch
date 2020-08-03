@@ -1,8 +1,8 @@
 diff --git a/src/TKIVtk/EXTERNLIB b/src/TKIVtk/EXTERNLIB
-index b8a4b250..a1de7dbf 100644
+index b8a4b250..17630fb2 100644
 --- a/src/TKIVtk/EXTERNLIB
 +++ b/src/TKIVtk/EXTERNLIB
-@@ -10,10 +10,9 @@ TKMesh
+@@ -10,10 +10,11 @@ TKMesh
  TKService
  TKTopAlgo
  TKV3d
@@ -14,6 +14,8 @@ index b8a4b250..a1de7dbf 100644
 -vtkFiltersGeneral
 -vtkInteractionStyle
 +vtkCommonCore-9.0
++vtkCommonExecutionModel-9.0
++vtkCommonDataModel-9.0
 +vtkRenderingCore-9.0
 +vtkRenderingOpenGL2-9.0
 +vtkRenderingFreeType-9.0
