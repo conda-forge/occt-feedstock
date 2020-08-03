@@ -1,4 +1,4 @@
-{% set name = "occt" %}
+{% set name = "occt-split" %}
 {% set version = "7.4.0" %}
 
 package:
@@ -22,7 +22,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - cmake 3.16
+    - cmake
     - ninja
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('libxi-devel') }}       # [linux]
@@ -33,22 +33,67 @@ requirements:
     - fontconfig
     - tbb-devel
     - xorg-libxt  # [linux]
-    - vtk
   run:
     - freetype
     - freeimage
     - fontconfig
     - xorg-libxt  # [linux]
-    - vtk
 
-test:
-  requires:
-    - ninja
-    - cmake
-  files:
-    - CMakeLists.txt
-  commands:
-    - cmake -G "Ninja" .
+
+outputs:
+  - name: occt-vtk
+
+    script: install_occt_vtk.sh  # [unix]
+    script: install_occt_vtk.bat  # [win]
+
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - cmake
+        - ninja
+        - {{ cdt('mesa-libgl-devel') }}  # [linux]
+        - {{ cdt('libxi-devel') }}       # [linux]
+        - {{ cdt('libxext-devel') }}     # [linux]
+      host:
+        - occt
+        - vtk
+      run:
+        - occt
+        - vtk
+
+  - name: occt
+
+    script: install_occt.sh  # [unix]
+    script: install_occt.bat  # [win]
+
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - cmake
+        - ninja
+        - {{ cdt('mesa-libgl-devel') }}  # [linux]
+        - {{ cdt('libxi-devel') }}       # [linux]
+        - {{ cdt('libxext-devel') }}     # [linux]
+      host:
+        - freetype
+        - freeimage 
+        - fontconfig
+        - tbb-devel
+        - xorg-libxt  # [linux]
+      run:
+        - freetype
+        - freeimage
+        - fontconfig
+        - xorg-libxt  # [linux]
+
+# test:
+#   requires:
+#     - ninja
+#     - cmake
+#   files:
+#     - CMakeLists.txt
+#   commands:
+#     - cmake -G "Ninja" .
 
 about:
   home: https://www.opencascade.com/

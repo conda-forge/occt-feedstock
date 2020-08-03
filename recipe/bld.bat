@@ -10,11 +10,11 @@ cmake -S . -B build  -G Ninja ^
       -D CMAKE_BUILD_TYPE="Release" ^
       -D USE_TBB=ON ^
       -D BUILD_RELEASE_DISABLE_EXCEPTIONS=OFF ^
-      -D USE_VTK:BOOL=ON ^
+      -D USE_VTK:BOOL=OFF ^
       -D USE_FREEIMAGE:BOOL=ON
 
 if errorlevel 1 exit 1
 
-cmake --build build -- -v install
+cmake --build build -- -v
 
 if errorlevel 1 exit 1
