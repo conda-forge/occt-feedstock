@@ -22,4 +22,4 @@ pin_run_as_build:
 target_platform:
 - linux-64
 vtk:
-- 8.2.0
+- 9.0.1
