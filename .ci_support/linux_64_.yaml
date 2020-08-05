@@ -23,4 +23,3 @@ target_platform:
 - linux-64
 vtk:
 - 9.0.1
-
