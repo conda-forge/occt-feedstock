@@ -1,7 +1,7 @@
 azure:
   settings_win:
     variables:
-      CONDA_BLD_PATH: "C:\\bld\\"
+      CONDA_BLD_PATH: C:\bld\
 provider:
   win: azure
 conda_forge_output_validation: true
