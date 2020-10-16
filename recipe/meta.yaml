@@ -11,8 +11,8 @@ source:
   sha256: 3b3186c9b1232fa1ded9c53ba836eeab007c3aab397dc27398e63e5547119bbe
   patches:
     - no-xmu.patch
-    - fix-private-linking.patch
-    - fix-brepblend.patch
+    #- fix-private-linking.patch
+    #- fix-brepblend.patch
     - vtk.patch 
     - cmake_policy.patch
 
