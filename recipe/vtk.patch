@@ -1,6 +1,8 @@
---- opencascade-7.4.0.orig/src/TKIVtk/EXTERNLIB
-+++ opencascade-7.4.0/src/TKIVtk/EXTERNLIB
-@@ -10,10 +10,3 @@
+diff --git a/src/TKIVtk/EXTERNLIB b/src/TKIVtk/EXTERNLIB
+index b8a4b250..5e374ed3 100644
+--- a/src/TKIVtk/EXTERNLIB
++++ b/src/TKIVtk/EXTERNLIB
+@@ -10,10 +10,13 @@ TKMesh
  TKService
  TKTopAlgo
  TKV3d
@@ -11,3 +13,13 @@
 -vtkRenderingFreeTypeOpenGL
 -vtkFiltersGeneral
 -vtkInteractionStyle
++vtkCommonCore-9.0
++vtkCommonMath-9.0
++vtkCommonTransforms-9.0
++vtkCommonExecutionModel-9.0
++vtkCommonDataModel-9.0
++vtkRenderingCore-9.0
++vtkRenderingOpenGL2-9.0
++vtkRenderingFreeType-9.0
++vtkFiltersGeneral-9.0
++vtkInteractionStyle-9.0
