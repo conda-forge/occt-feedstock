@@ -5,9 +5,13 @@ Home: https://www.opencascade.com/
 
 Package license: LGPL-2.1
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/occt-feedstock/blob/master/LICENSE.txt)
 
 Summary: this is the occ (opencascade) CAD-Kernel
+
+Development: http://git.dev.opencascade.org/gitweb/?p=occt.git
+
+Documentation: https://www.opencascade.com/content/documentation
 
 Open Cascade Technology (OCCT), formerly called CAS.CADE
 is an open source software development platform for 3D CAD,
