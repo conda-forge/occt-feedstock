@@ -1,6 +1,3 @@
-REM Remove /GL to make this build fit 10G
-set "CXXFLAGS=%CXXFLAGS:-GL=%"
-del "%LIBRARY_PREFIX%\lib\cmake\glew\glew-config.cmake"
 cmake -S . -B build  -G Ninja ^
       -D CMAKE_PREFIX_PATH:FILEPATH="%LIBRARY_PREFIX%" ^
       -D CMAKE_LIBRARY_PATH:FILEPATH="%LIBRARY_PREFIX%/lib" ^
