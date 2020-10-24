@@ -15,7 +15,8 @@ cmake -S . -B build  -G Ninja ^
       -D VTK_RENDERING_BACKEND:STRING="OpenGL2" ^
       -D GLEW_LIBRARY:FILEPATH="%LIBRARY_PREFIX%/lib/glew32.lib" ^
       -D TBB_LIBRARY_RELEASE:FILEPATH="%LIBRARY_PREFIX%/lib/tbb.lib" ^
-      -D USE_FREEIMAGE:BOOL=ON
+      -D USE_FREEIMAGE:BOOL=ON ^
+      -D USE_RAPIDJSON:BOOL=ON
 
 if errorlevel 1 exit 1
 
