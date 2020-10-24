@@ -30,13 +30,14 @@ requirements:
     - tbb-devel
     - xorg-libxt  # [linux]
     - vtk
+    - rapidjson
   run:
     - freetype
     - freeimage
     - fontconfig
     - xorg-libxt  # [linux]
     - vtk
-
+    - rapidjson
 test:
   requires:
     - ninja
