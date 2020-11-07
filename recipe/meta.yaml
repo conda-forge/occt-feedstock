@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=V{{ version.replace(".", "_") }};sf=tgz
-  sha256: 3b3186c9b1232fa1ded9c53ba836eeab007c3aab397dc27398e63e5547119bbe
+  sha256: 23077c390d468a53e02637bfca6ed50564175870c02a58fb89668e38b1baff2e
   patches:
     - no-xmu.patch
 
