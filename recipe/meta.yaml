@@ -11,9 +11,10 @@ source:
   sha256: d7084a53eec031561a6dfb35e71f0c69ba212a89e7e68339e1912dc45f77c00a
   patches:
     - no-xmu.patch
+    - error-checking.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
