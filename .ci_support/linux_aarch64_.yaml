@@ -1,7 +1,11 @@
+BUILD:
+- aarch64-conda_cos7-linux-gnu
+cdt_arch:
+- aarch64
 cdt_name:
 - cos7
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
@@ -22,7 +26,7 @@ pin_run_as_build:
   vtk:
     max_pin: x.x.x
 target_platform:
-- linux-ppc64le
+- linux-aarch64
 tbb_devel:
 - '2020'
 vtk:
