@@ -1,4 +1,4 @@
-cmake -S . -B build  -G Ninja \
+cmake ${CMAKE_ARGS} -S . -B build  -G Ninja \
       -D CMAKE_FIND_ROOT_PATH="$PREFIX;$BUILD_PREFIX/$HOST/sysroot" \
       -D CMAKE_INSTALL_PREFIX:FILEPATH=$PREFIX \
       -D CMAKE_PREFIX_PATH:FILEPATH=$PREFIX \
