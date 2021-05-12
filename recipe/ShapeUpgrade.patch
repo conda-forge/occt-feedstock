@@ -1,12 +1,12 @@
 diff --git a/src/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.hxx b/src/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.hxx
-index b1558d11..d4709632 100644
+index b1558d11..dd7e8294 100644
 --- a/src/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.hxx
 +++ b/src/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.hxx
 @@ -22,6 +22,7 @@
  #include <Standard_Type.hxx>
  
  #include <TopoDS_Shape.hxx>
-+#include <TopoDs_Edge.hxx>
++#include <TopoDS_Edge.hxx>
  #include <Standard_Boolean.hxx>
  #include <Standard_Transient.hxx>
  #include <TopTools_DataMapOfShapeShape.hxx>
