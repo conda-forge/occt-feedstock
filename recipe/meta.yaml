@@ -10,10 +10,10 @@ source:
   url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=V{{ version.replace(".", "_") }};sf=tgz
   sha256: b5484b6b7d2a15c2903ddc264b89e4e024f6f67bbbf28badfa773ec72a793279
   patches:
-    - no-xmu.patch
-    - error-checking.patch
-    - ShapeUpgrade.patch
-    - fix-step-import.patch
+    #- no-xmu.patch
+    #- error-checking.patch
+    #- ShapeUpgrade.patch
+    #- fix-step-import.patch
 
 build:
   number: 0
