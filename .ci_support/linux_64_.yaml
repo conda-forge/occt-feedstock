@@ -26,7 +26,7 @@ target_platform:
 tbb_devel:
 - '2020'
 vtk:
-- 9.0.3
+- 9.1.0
 zip_keys:
 - - cdt_name
   - docker_image
