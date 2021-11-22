@@ -24,7 +24,7 @@ pin_run_as_build:
 target_platform:
 - linux-64
 tbb_devel:
-- '2020'
+- '2021'
 vtk:
 - 9.1.0
 zip_keys:
