@@ -27,7 +27,5 @@ pin_run_as_build:
     max_pin: x.x.x
 target_platform:
 - linux-aarch64
-tbb_devel:
-- '2020'
 vtk:
 - 9.1.0
