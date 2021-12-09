@@ -1,4 +1,4 @@
-vtk_build_variant:
+build_variant:
   - "qt"
   - "osmesa"  # [linux64]
   - "egl"  # [linux64]

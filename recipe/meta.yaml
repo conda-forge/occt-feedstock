@@ -1,5 +1,8 @@
 {% set name = "occt" %}
 {% set version = "7.6.0" %}
+{% set build_number = 1 %}
+{% set build_number = build_number + 100 %}   # [build_variant == "osmesa"]
+{% set build_number = build_number + 200 %}   # [build_variant == "qt"]
 
 package:
   name: {{ name }}
@@ -16,33 +19,35 @@ source:
     #- fix-step-import.patch
 
 build:
-  number: 3
+  number: {{ build_number }}
+  string: {{ build_variant }}_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build_number }}
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - cmake 3.18
     - ninja
-    - {{ cdt('mesa-libgl-devel') }}  # [linux and build_variant != "osmesa"]
-    - {{ cdt('libxi-devel') }}       # [linux and build_variant != "osmesa"]
-    - {{ cdt('libxext-devel') }}     # [linux and build_variant != "osmesa"]
+    - {{ cdt('mesa-libgl-devel') }}   # [linux and build_variant != "osmesa"]
+    - {{ cdt('libxi-devel') }}        # [linux and build_variant != "osmesa"]
+    - {{ cdt('libxext-devel') }}      # [linux and build_variant != "osmesa"]
+    - {{ cdt('mesa-libegl-devel') }}  # [build_variant == "egl"]
   host:
     - freetype
     - freeimage
     - fontconfig
-    - xorg-libxt  # [linux]
-    - vtk * qt*  # [vtk_build_variant == "qt"]
-    - vtk * osmesa*  # [vtk_build_variant == "osmesa"]
-    - vtk * egl*  # [vtk_build_variant == "egl"]
+    - xorg-libxt     # [linux]
+    - vtk * qt*      # [build_variant == "qt"]
+    - vtk * osmesa*  # [build_variant == "osmesa"]
+    - vtk * egl*     # [build_variant == "egl"]
     - rapidjson
   run:
     - freetype
     - freeimage
     - fontconfig
-    - xorg-libxt  # [linux]
-    - vtk * qt*  # [vtk_build_variant == "qt"]
-    - vtk * osmesa*  # [vtk_build_variant == "osmesa"]
-    - vtk * egl*  # [vtk_build_variant == "egl"]
+    - xorg-libxt     # [linux]
+    - vtk * qt*      # [build_variant == "qt"]
+    - vtk * osmesa*  # [build_variant == "osmesa"]
+    - vtk * egl*     # [build_variant == "egl"]
     - rapidjson
 test:
   requires:
