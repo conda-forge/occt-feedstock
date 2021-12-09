@@ -23,22 +23,26 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake 3.18
     - ninja
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
-    - {{ cdt('libxi-devel') }}       # [linux]
-    - {{ cdt('libxext-devel') }}     # [linux]
+    - {{ cdt('mesa-libgl-devel') }}  # [linux and build_variant != "osmesa"]
+    - {{ cdt('libxi-devel') }}       # [linux and build_variant != "osmesa"]
+    - {{ cdt('libxext-devel') }}     # [linux and build_variant != "osmesa"]
   host:
     - freetype
     - freeimage
     - fontconfig
     - xorg-libxt  # [linux]
-    - vtk
+    - vtk * qt*  # [vtk_build_variant == "qt"]
+    - vtk * osmesa*  # [vtk_build_variant == "osmesa"]
+    - vtk * egl*  # [vtk_build_variant == "egl"]
     - rapidjson
   run:
     - freetype
     - freeimage
     - fontconfig
     - xorg-libxt  # [linux]
-    - vtk
+    - vtk * qt*  # [vtk_build_variant == "qt"]
+    - vtk * osmesa*  # [vtk_build_variant == "osmesa"]
+    - vtk * egl*  # [vtk_build_variant == "egl"]
     - rapidjson
 test:
   requires:
