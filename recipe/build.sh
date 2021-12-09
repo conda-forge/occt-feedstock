@@ -2,10 +2,7 @@ CMAKE_ARGS=()
 
 if [[ "$build_variant" == "egl" ]]; then
       CMAKE_ARGS+=(
-            "-DEGL_INCLUDE_DIR:PATH=${BUILD_PREFIX}/${HOST}/sysroot/usr/include"
-            "-DEGL_LIBRARY:FILEPATH=${BUILD_PREFIX}/${HOST}/sysroot/usr/lib/libEGL.so.1"
             "-DOPENGL_egl_LIBRARY:FILEPATH=${BUILD_PREFIX}/${HOST}/sysroot/usr/lib/libEGL.so.1"
-            "-DEGL_opengl_LIBRARY:FILEPATH=${BUILD_PREFIX}/${HOST}/sysroot/usr/lib64/libGL.so"
             "-DOPENGL_opengl_LIBRARY:FILEPATH=${BUILD_PREFIX}/${HOST}/sysroot/usr/lib64/libGL.so"
       )
 fi
