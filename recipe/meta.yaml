@@ -1,8 +1,9 @@
 {% set name = "occt" %}
 {% set version = "7.6.0" %}
 {% set build_number = 1 %}
-{% set build_number = build_number + 100 %}   # [build_variant == "osmesa"]
-{% set build_number = build_number + 200 %}   # [build_variant == "qt"]
+{% set build_number = build_number + 0 %}    # [build_variant == "egl"]
+{% set build_number = build_number + 100 %}  # [build_variant == "osmesa"]
+{% set build_number = build_number + 200 %}  # [build_variant == "qt"]
 
 package:
   name: {{ name }}
@@ -31,6 +32,7 @@ requirements:
     - {{ cdt('libxi-devel') }}        # [linux and build_variant != "osmesa"]
     - {{ cdt('libxext-devel') }}      # [linux and build_variant != "osmesa"]
     - {{ cdt('mesa-libegl-devel') }}  # [build_variant == "egl"]
+    - {{ cdt('mesa-libgbm') }}        # [build_variant == "egl"]
   host:
     - freetype
     - freeimage
