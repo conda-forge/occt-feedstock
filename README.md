@@ -36,10 +36,24 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
+              <td>linux_64_vtk_build_variantegl</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=709&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/occt-feedstock?branchName=master&jobName=linux&configuration=linux_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/occt-feedstock?branchName=master&jobName=linux&configuration=linux_64_vtk_build_variantegl" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_vtk_build_variantosmesa</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=709&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/occt-feedstock?branchName=master&jobName=linux&configuration=linux_64_vtk_build_variantosmesa" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_vtk_build_variantqt</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=709&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/occt-feedstock?branchName=master&jobName=linux&configuration=linux_64_vtk_build_variantqt" alt="variant">
                 </a>
               </td>
             </tr><tr>

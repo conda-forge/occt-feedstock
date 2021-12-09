@@ -13,9 +13,7 @@ pin_run_as_build:
     max_pin: x
   freetype:
     max_pin: x
-  vtk:
-    max_pin: x.x.x
 target_platform:
 - win-64
-vtk:
-- 9.1.0
+vtk_build_variant:
+- qt

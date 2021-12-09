@@ -13,7 +13,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '9'
 docker_image:
-- quay.io/condaforge/linux-anvil-comp7
+- quay.io/condaforge/linux-anvil-cos7-x86_64
 fontconfig:
 - '2.13'
 freetype:
@@ -23,9 +23,7 @@ pin_run_as_build:
     max_pin: x
   freetype:
     max_pin: x
-  vtk:
-    max_pin: x.x.x
 target_platform:
 - linux-aarch64
-vtk:
-- 9.1.0
+vtk_build_variant:
+- qt
