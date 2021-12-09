@@ -28,9 +28,9 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake 3.18
     - ninja
-    - {{ cdt('mesa-libgl-devel') }}   # [linux and build_variant != "osmesa"]
-    - {{ cdt('libxi-devel') }}        # [linux and build_variant != "osmesa"]
-    - {{ cdt('libxext-devel') }}      # [linux and build_variant != "osmesa"]
+    - {{ cdt('mesa-libgl-devel') }}   # [linux]
+    - {{ cdt('libxi-devel') }}        # [linux]
+    - {{ cdt('libxext-devel') }}      # [linux]
     - {{ cdt('mesa-libegl-devel') }}  # [build_variant == "egl"]
   host:
     - freetype

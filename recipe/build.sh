@@ -5,6 +5,10 @@ if [[ "$build_variant" == "egl" ]]; then
             "-DOPENGL_egl_LIBRARY:FILEPATH=${BUILD_PREFIX}/${HOST}/sysroot/usr/lib/libEGL.so.1"
             "-DOPENGL_opengl_LIBRARY:FILEPATH=${BUILD_PREFIX}/${HOST}/sysroot/usr/lib64/libGL.so"
       )
+elif [[ "$build_variant" == "osmesa" ]]; then
+      CMAKE_ARGS+=(
+            "-DOPENGL_opengl_LIBRARY:FILEPATH=${BUILD_PREFIX}/${HOST}/sysroot/usr/lib64/libGL.so"
+      )
 fi
 
 cmake -S . -B build  -G Ninja \
