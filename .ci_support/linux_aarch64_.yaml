@@ -1,5 +1,7 @@
 BUILD:
 - aarch64-conda_cos7-linux-gnu
+build_variant:
+- qt
 cdt_arch:
 - aarch64
 cdt_name:
@@ -25,5 +27,3 @@ pin_run_as_build:
     max_pin: x
 target_platform:
 - linux-aarch64
-vtk_build_variant:
-- qt

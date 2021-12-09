@@ -8,16 +8,16 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_vtk_build_variantegl:
-        CONFIG: linux_64_vtk_build_variantegl
+      linux_64_build_variantegl:
+        CONFIG: linux_64_build_variantegl
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_vtk_build_variantosmesa:
-        CONFIG: linux_64_vtk_build_variantosmesa
+      linux_64_build_variantosmesa:
+        CONFIG: linux_64_build_variantosmesa
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_vtk_build_variantqt:
-        CONFIG: linux_64_vtk_build_variantqt
+      linux_64_build_variantqt:
+        CONFIG: linux_64_build_variantqt
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_aarch64_:

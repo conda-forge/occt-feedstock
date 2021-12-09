@@ -1,3 +1,5 @@
+build_variant:
+- qt
 cdt_name:
 - cos7
 channel_sources:
@@ -21,5 +23,3 @@ pin_run_as_build:
     max_pin: x
 target_platform:
 - linux-ppc64le
-vtk_build_variant:
-- qt

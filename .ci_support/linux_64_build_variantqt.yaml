@@ -1,3 +1,5 @@
+build_variant:
+- qt
 cdt_name:
 - cos6
 channel_sources:
@@ -21,5 +23,3 @@ pin_run_as_build:
     max_pin: x
 target_platform:
 - linux-64
-vtk_build_variant:
-- egl

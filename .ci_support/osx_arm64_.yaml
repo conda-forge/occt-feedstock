@@ -1,5 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '11.0'
+build_variant:
+- qt
 channel_sources:
 - conda-forge
 channel_targets:
@@ -21,5 +23,3 @@ pin_run_as_build:
     max_pin: x
 target_platform:
 - osx-arm64
-vtk_build_variant:
-- qt
