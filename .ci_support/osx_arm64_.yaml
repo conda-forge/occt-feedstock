@@ -24,4 +24,4 @@ pin_run_as_build:
 target_platform:
 - osx-arm64
 vtk:
-- 9.0.1
+- 9.1.0
