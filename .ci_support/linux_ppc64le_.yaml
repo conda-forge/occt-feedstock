@@ -1,13 +1,13 @@
 cdt_name:
 - cos7
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '9'
+- '10'
 docker_image:
 - quay.io/condaforge/linux-anvil-ppc64le
 fontconfig:
@@ -23,7 +23,5 @@ pin_run_as_build:
     max_pin: x.x.x
 target_platform:
 - linux-ppc64le
-tbb_devel:
-- '2020'
 vtk:
 - 9.0.1
