@@ -16,7 +16,7 @@ source:
     - fix-step-import.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -30,7 +30,6 @@ requirements:
     - freetype
     - freeimage
     - fontconfig
-    - tbb-devel
     - xorg-libxt  # [linux]
     - vtk
     - rapidjson
