@@ -1,5 +1,5 @@
 {% set name = "occt" %}
-{% set version = "7.6.1" %}
+{% set version = "7.6.2" %}
 
 package:
   name: {{ name }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=V{{ version.replace(".", "_") }};sf=tgz
-  sha256: 3d956b2d26d1ee75ac02b21e838ed8b4731d9e91401cae4af3455b56b000f56d
+  sha256: 9f7285acdfe63754955dfba1114010d5f273ac2be189c9717c4228bb28fd675f
   patches:
     #- no-xmu.patch
     #- error-checking.patch
