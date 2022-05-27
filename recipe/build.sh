@@ -12,6 +12,7 @@ cmake -S . -B build  -G Ninja \
       -D 3RDPARTY_VTK_INCLUDE_DIR:FILEPATH=$PREFIX/include/vtk-9.1 \
       -D VTK_RENDERING_BACKEND:STRING="OpenGL2" \
       -D USE_FREEIMAGE:BOOL=ON \
-      -D USE_RAPIDJSON:BOOL=ON
+      -D USE_RAPIDJSON:BOOL=ON \
+      -D BUILD_RELEASE_DISABLE_EXCEPTIONS:BOOL=OFF
 
 cmake --build build -- install
