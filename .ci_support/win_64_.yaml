@@ -5,17 +5,10 @@ channel_targets:
 cxx_compiler:
 - vs2019
 fontconfig:
-- '2.13'
+- '2'
 freetype:
 - '2'
-pin_run_as_build:
-  fontconfig:
-    max_pin: x
-  freetype:
-    max_pin: x
-  vtk:
-    max_pin: x.x.x
 target_platform:
 - win-64
 vtk:
-- 9.1.0
+- 9.2.2
