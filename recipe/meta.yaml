@@ -1,5 +1,5 @@
 {% set name = "occt" %}
-{% set version = "7.6.3" %}
+{% set version = "7.7.0" %}
 
 package:
   name: {{ name }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=V{{ version.replace(".", "_") }};sf=tgz
-  sha256: 657933e8c2d431345bfaec8934499bcee38e47a24faaf480265f40e85d84c49c
+  sha256: 36e2430f732df5b06191c68385a5529b38e84fbab479d90ce801a790392f0231
   patches:
     - patches/blobfish.patch
 
