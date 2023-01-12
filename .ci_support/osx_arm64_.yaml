@@ -17,4 +17,4 @@ macos_machine:
 target_platform:
 - osx-arm64
 vtk:
-- 9.2.2
+- 9.2.5
