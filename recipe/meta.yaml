@@ -2,7 +2,7 @@
 {% set version = "7.7.0" %}
 
 package:
-  name: {{ name }}
+  name: {{ name }}-{{ variant }}
   version: {{ version }}
 
 source:
@@ -14,6 +14,9 @@ source:
 
 build:
   number: 2
+  script_env:
+    - USE_VTK=OFF # [variant=='core']
+    - USE_VTK=ON # [variant=='vtk']
 
 requirements:
   build:
@@ -28,15 +31,16 @@ requirements:
     - freeimage
     - fontconfig
     - xorg-libxt  # [linux]
-    - vtk
     - rapidjson
+    - vtk # [variant=='vtk']
   run:
     - freetype
     - freeimage
     - fontconfig
     - xorg-libxt  # [linux]
-    - vtk
     - rapidjson
+    - vtk # [variant=='vtk']
+
 test:
   requires:
     - ninja
