@@ -15,8 +15,8 @@ source:
 build:
   number: 2
   script_env:
-    - USE_VTK=OFF # [variant=='core']
-    - USE_VTK=ON # [variant=='vtk']
+    - USE_VTK=OFF  # [variant=='core']
+    - USE_VTK=ON  # [variant=='vtk']
 
 requirements:
   build:
@@ -32,14 +32,14 @@ requirements:
     - fontconfig
     - xorg-libxt  # [linux]
     - rapidjson
-    - vtk # [variant=='vtk']
+    - vtk  # [variant=='vtk']
   run:
     - freetype
     - freeimage
     - fontconfig
     - xorg-libxt  # [linux]
     - rapidjson
-    - vtk # [variant=='vtk']
+    - vtk  # [variant=='vtk']
 
 test:
   requires:
