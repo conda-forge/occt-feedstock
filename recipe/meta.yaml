@@ -1,12 +1,17 @@
 {% set name = "occt" %}
 {% set version = "7.7.0" %}
 
+{% if variant == "core" %}
+  {% set name = "occt-core" %}
+{% endif %}
+
+
 package:
-  name: {{ name }}-{{ variant }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
+  fn: occt-{{ version }}.tar.gz
   url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=V{{ version.replace(".", "_") }};sf=tgz
   sha256: 6845a17fe5f40b3685a571be97e5696605de23cc7abf10f8a644d2163711c6ff
   patches:
