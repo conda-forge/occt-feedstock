@@ -13,7 +13,11 @@ source:
     - patches/blobfish.patch
 
 build:
-  number: 0
+  number: 1
+  run_exports:
+    # ABI changes between minor versions, see e.g.
+    # https://github.com/conda-forge/occt-feedstock/issues/97
+    - {{ pin_subpackage('occt', max_pin='x.x.x') }}
 
 requirements:
   build:
