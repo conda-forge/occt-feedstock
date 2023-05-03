@@ -1,5 +1,10 @@
 {% set name = "occt" %}
 {% set version = "7.7.1" %}
+{% set build = 0 %}
+
+{% set build = build + 100 %}   # [variant == "novtk"]
+{% set build = build + 200 %}   # [variant == "all"]
+
 
 package:
   name: {{ name }}
@@ -13,7 +18,11 @@ source:
     - patches/blobfish.patch
 
 build:
-  number: 0
+  number: {{ build }}
+  string: {{ variant }}_h{{ PKG_HASH }}_{{ build }}
+  script_env:
+    - USE_VTK=OFF  # [variant=='novtk']
+    - USE_VTK=ON  # [variant=='all']
 
 requirements:
   build:
@@ -28,15 +37,16 @@ requirements:
     - freeimage
     - fontconfig
     - xorg-libxt  # [linux]
-    - vtk
     - rapidjson
+    - vtk  # [variant=='all']
   run:
     - freetype
     - freeimage
     - fontconfig
     - xorg-libxt  # [linux]
-    - vtk
     - rapidjson
+    - vtk  # [variant=='all']
+
 test:
   requires:
     - ninja
