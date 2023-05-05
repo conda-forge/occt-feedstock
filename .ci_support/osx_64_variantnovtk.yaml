@@ -1,5 +1,5 @@
 MACOSX_DEPLOYMENT_TARGET:
-- '11.0'
+- '10.9'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -7,14 +7,16 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '14'
+- '15'
 fontconfig:
 - '2'
 freetype:
 - '2'
 macos_machine:
-- arm64-apple-darwin20.0.0
+- x86_64-apple-darwin13.4.0
 target_platform:
-- osx-arm64
+- osx-64
+variant:
+- novtk
 vtk:
 - 9.2.5
