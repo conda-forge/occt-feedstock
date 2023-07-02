@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index f4ec871f56..d86bc18e37 100644
+index fd17283f77..e640b04133 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -981,15 +981,15 @@ else()
+@@ -1021,15 +1021,15 @@ else()
  endif()
  
   # change custom.bat/sh
@@ -27,10 +27,10 @@ index f4ec871f56..d86bc18e37 100644
  if (WIN32)
    set (THIRDPARTY_DIR_REPLACE "%THIRDPARTY_DIR%")
 diff --git a/src/BRepFill/BRepFill_CompatibleWires.cxx b/src/BRepFill/BRepFill_CompatibleWires.cxx
-index b4d2cb8931..0d44b99a4c 100644
+index ebb01adf79..274092aede 100644
 --- a/src/BRepFill/BRepFill_CompatibleWires.cxx
 +++ b/src/BRepFill/BRepFill_CompatibleWires.cxx
-@@ -598,26 +598,18 @@ static void Transform (const Standard_Boolean WithRotation,
+@@ -593,26 +593,18 @@ static void Transform (const Standard_Boolean WithRotation,
    gp_Vec axe1 = Ax1, axe2 = Ax2; 
    if (!axe1.IsParallel(axe2,1.e-4)) {
      gp_Vec Vtrans(Pos1,Pos2),Vsign;
@@ -59,7 +59,7 @@ index b4d2cb8931..0d44b99a4c 100644
      Pnew = Pnew.Rotated (Norm,ang);
    }
  }
-@@ -1136,11 +1128,14 @@ void BRepFill_CompatibleWires::
+@@ -1131,11 +1123,14 @@ void BRepFill_CompatibleWires::
      gp_Pnt PPs = Curve.Value(0.1*(U1+9*U2));
      TopTools_ListIteratorOfListOfShape itF(MapVLV(VF)),itL(MapVLV(VL));
      Standard_Integer rang = ideb;
@@ -76,10 +76,10 @@ index b4d2cb8931..0d44b99a4c 100644
      TopoDS_Edge Esol;
      Standard_Real scalmax=0.;
 diff --git a/src/BRepFill/BRepFill_Filling.cxx b/src/BRepFill/BRepFill_Filling.cxx
-index 546919e9aa..81abf062c6 100644
+index 89f77932a1..2fef5f9a1f 100644
 --- a/src/BRepFill/BRepFill_Filling.cxx
 +++ b/src/BRepFill/BRepFill_Filling.cxx
-@@ -104,6 +104,7 @@ static TopoDS_Wire WireFromList(TopTools_ListOfShape& Edges)
+@@ -95,6 +95,7 @@ static TopoDS_Wire WireFromList(TopTools_ListOfShape& Edges)
    while (!Edges.IsEmpty())
    {
      TopTools_ListIteratorOfListOfShape itl(Edges);
@@ -87,7 +87,7 @@ index 546919e9aa..81abf062c6 100644
      for (; itl.More(); itl.Next())
      {
        anEdge = TopoDS::Edge(itl.Value());
-@@ -126,11 +127,17 @@ static TopoDS_Wire WireFromList(TopTools_ListOfShape& Edges)
+@@ -117,11 +118,17 @@ static TopoDS_Wire WireFromList(TopTools_ListOfShape& Edges)
            anEdge.Reverse();
            V2 = V3;
          }
@@ -107,7 +107,7 @@ index 546919e9aa..81abf062c6 100644
    }
  
    aWire.Closed(Standard_True);
-@@ -325,13 +332,22 @@ void BRepFill_Filling::AddConstraints( const BRepFill_SequenceOfEdgeFaceAndOrder
+@@ -316,13 +323,22 @@ void BRepFill_Filling::AddConstraints( const BRepFill_SequenceOfEdgeFaceAndOrder
        CurFace = SeqOfConstraints(i).myFace;
        CurOrder = SeqOfConstraints(i).myOrder;
        
@@ -131,7 +131,7 @@ index 546919e9aa..81abf062c6 100644
  						myNbPtsOnCur,
  						myTol3d );
  	}
-@@ -355,7 +371,7 @@ void BRepFill_Filling::AddConstraints( const BRepFill_SequenceOfEdgeFaceAndOrder
+@@ -346,7 +362,7 @@ void BRepFill_Filling::AddConstraints( const BRepFill_SequenceOfEdgeFaceAndOrder
  	  Handle (Adaptor3d_CurveOnSurface) HCurvOnSurf = new Adaptor3d_CurveOnSurface( CurvOnSurf );
  	  
  	  Constr = new GeomPlate_CurveConstraint(HCurvOnSurf,
@@ -140,7 +140,7 @@ index 546919e9aa..81abf062c6 100644
  						 myNbPtsOnCur,
  						 myTol3d,
  						 myTolAng,
-@@ -375,7 +391,7 @@ void BRepFill_Filling::AddConstraints( const BRepFill_SequenceOfEdgeFaceAndOrder
+@@ -366,7 +382,7 @@ void BRepFill_Filling::AddConstraints( const BRepFill_SequenceOfEdgeFaceAndOrder
  	  Handle (Adaptor3d_CurveOnSurface) HCurvOnSurf = new Adaptor3d_CurveOnSurface( CurvOnSurf );
  
  	  Constr = new BRepFill_CurveConstraint( HCurvOnSurf,
@@ -149,7 +149,7 @@ index 546919e9aa..81abf062c6 100644
  						 myNbPtsOnCur,
  						 myTol3d,
  						 myTolAng,
-@@ -572,6 +588,12 @@ void BRepFill_Filling::Build()
+@@ -563,6 +579,12 @@ void BRepFill_Filling::Build()
  {
    myBuilder.reset (new GeomPlate_BuildPlateSurface (myDegree, myNbPtsOnCur, myNbIter,
                                                      myTol2d, myTol3d, myTolAng, myTolCurv, myAnisotropie));
@@ -175,10 +175,10 @@ index f1ddbdcefb..d2fe99bac7 100644
    myError = BRepLib_EdgeDone;
    Done();
 diff --git a/src/BRepOffset/BRepOffset_Tool.cxx b/src/BRepOffset/BRepOffset_Tool.cxx
-index 97cc14cd26..0f1d4f056f 100644
+index a7a1930e24..f36438c6f5 100644
 --- a/src/BRepOffset/BRepOffset_Tool.cxx
 +++ b/src/BRepOffset/BRepOffset_Tool.cxx
-@@ -1891,7 +1891,8 @@ Standard_Boolean BRepOffset_Tool::TryProject
+@@ -1879,7 +1879,8 @@ Standard_Boolean BRepOffset_Tool::TryProject
      TopoDS_Edge CurE     = TopoDS::Edge(it.Value());
      Handle(Geom_Curve) C = BRep_Tool::Curve(CurE,L,f,l);
      if (C.IsNull()) {
@@ -189,10 +189,10 @@ index 97cc14cd26..0f1d4f056f 100644
      }
      C = new Geom_TrimmedCurve(C,f,l);
 diff --git a/src/ChFi3d/ChFi3d.cxx b/src/ChFi3d/ChFi3d.cxx
-index 6197cc4968..7779fd454c 100644
+index 82d87ebd62..e955ea53bf 100644
 --- a/src/ChFi3d/ChFi3d.cxx
 +++ b/src/ChFi3d/ChFi3d.cxx
-@@ -135,6 +135,13 @@ ChFiDS_TypeOfConcavity ChFi3d::DefineConnectType(const TopoDS_Edge&     E,
+@@ -130,6 +130,13 @@ ChFiDS_TypeOfConcavity ChFi3d::DefineConnectType(const TopoDS_Edge&     E,
    }
  }
  
@@ -206,7 +206,7 @@ index 6197cc4968..7779fd454c 100644
  //=======================================================================
  //function : IsTangentFaces
  //purpose  : 
-@@ -142,6 +149,7 @@ ChFiDS_TypeOfConcavity ChFi3d::DefineConnectType(const TopoDS_Edge&     E,
+@@ -137,6 +144,7 @@ ChFiDS_TypeOfConcavity ChFi3d::DefineConnectType(const TopoDS_Edge&     E,
  Standard_Boolean ChFi3d::IsTangentFaces(const TopoDS_Edge&  theEdge,
                                          const TopoDS_Face&  theFace1,
                                          const TopoDS_Face&  theFace2,
@@ -214,7 +214,7 @@ index 6197cc4968..7779fd454c 100644
                                          const GeomAbs_Shape theOrder)
  {
    if (theOrder == GeomAbs_G1 && BRep_Tool::Continuity(theEdge, theFace1, theFace2) != GeomAbs_C0)
-@@ -223,7 +231,7 @@ Standard_Boolean ChFi3d::IsTangentFaces(const TopoDS_Edge&  theEdge,
+@@ -218,7 +226,7 @@ Standard_Boolean ChFi3d::IsTangentFaces(const TopoDS_Edge&  theEdge,
  
      LocalAnalysis_SurfaceContinuity aCont(aC2d1, aC2d2, aPar,
        aSurf1, aSurf2, theOrder,
@@ -224,10 +224,10 @@ index 6197cc4968..7779fd454c 100644
      {
        if (theOrder == GeomAbs_C2 &&
 diff --git a/src/ChFi3d/ChFi3d.hxx b/src/ChFi3d/ChFi3d.hxx
-index eb218fba2a..fbf0e5f866 100644
+index 6292eb31af..11abbe1eba 100644
 --- a/src/ChFi3d/ChFi3d.hxx
 +++ b/src/ChFi3d/ChFi3d.hxx
-@@ -50,6 +50,12 @@ public:
+@@ -49,6 +49,12 @@ public:
                                                            const TopoDS_Face& theFace1,
                                                            const TopoDS_Face& theFace2,
                                                            const GeomAbs_Shape Order = GeomAbs_G1);
@@ -241,10 +241,10 @@ index eb218fba2a..fbf0e5f866 100644
    //! Returns  Reversed  in  Or1  and(or)  Or2  if
    //! the  concave edge  defined by the  interior of faces F1 and F2,
 diff --git a/src/ChFi3d/ChFi3d_Builder_0.cxx b/src/ChFi3d/ChFi3d_Builder_0.cxx
-index 520f613f49..79a7d9219e 100644
+index ef17f40eb1..a9438fa0d9 100644
 --- a/src/ChFi3d/ChFi3d_Builder_0.cxx
 +++ b/src/ChFi3d/ChFi3d_Builder_0.cxx
-@@ -3192,6 +3192,7 @@ Standard_Boolean ChFi3d_ComputeCurves(const Handle(Adaptor3d_Surface)&   S1,
+@@ -3105,6 +3105,7 @@ Standard_Boolean ChFi3d_ComputeCurves(const Handle(Adaptor3d_Surface)&   S1,
        ChFi3d_ProjectPCurv(HC,S1,Pc1,tol3d,tolr1);
        ChFi3d_ProjectPCurv(HC,S2,Pc2,tol3d,tolr2);
        C3d = new Geom_TrimmedCurve(C3d,Udeb,Ufin);
@@ -253,10 +253,10 @@ index 520f613f49..79a7d9219e 100644
      }
    }
 diff --git a/src/ChFi3d/ChFi3d_Builder_1.cxx b/src/ChFi3d/ChFi3d_Builder_1.cxx
-index 8897fb1f5a..8f1ba06b95 100644
+index d8f9df9ce1..a767ebfe70 100644
 --- a/src/ChFi3d/ChFi3d_Builder_1.cxx
 +++ b/src/ChFi3d/ChFi3d_Builder_1.cxx
-@@ -852,7 +852,7 @@ Standard_Boolean ChFi3d_Builder::PerformElement(const Handle(ChFiDS_Spine)& Spin
+@@ -834,7 +834,7 @@ Standard_Boolean ChFi3d_Builder::PerformElement(const Handle(ChFiDS_Spine)& Spin
    if(ff1.IsNull() || ff2.IsNull()) return 0;
  //  Modified by Sergey KHROMOV - Fri Dec 21 17:46:22 2001 End
  //if(BRep_Tool::Continuity(Ec,ff1,ff2) != GeomAbs_C0) return 0;
@@ -266,10 +266,10 @@ index 8897fb1f5a..8f1ba06b95 100644
  
    TopoDS_Face FirstFace = ff1;
 diff --git a/src/ChFiDS/ChFiDS_FilSpine.cxx b/src/ChFiDS/ChFiDS_FilSpine.cxx
-index 9506dc44b3..54890a1c7c 100644
+index bfd3538257..233e74d92f 100644
 --- a/src/ChFiDS/ChFiDS_FilSpine.cxx
 +++ b/src/ChFiDS/ChFiDS_FilSpine.cxx
-@@ -55,14 +55,16 @@ ChFiDS_Spine(Tol)
+@@ -54,14 +54,16 @@ ChFiDS_Spine(Tol)
  void ChFiDS_FilSpine::Reset(const Standard_Boolean AllData)
  {
    ChFiDS_Spine::Reset(AllData);
@@ -288,7 +288,7 @@ index 9506dc44b3..54890a1c7c 100644
        gp_XY FirstUandR = parandrad.First();
        gp_XY LastUandR  = parandrad.Last();
        if (Abs( spinedeb - FirstUandR.X() ) > gp::Resolution())
-@@ -226,9 +228,17 @@ void  ChFiDS_FilSpine::SetRadius(const Handle(Law_Function)& C,
+@@ -225,9 +227,17 @@ void  ChFiDS_FilSpine::SetRadius(const Handle(Law_Function)& C,
  				 const Standard_Integer      /*IinC*/)
  {
    splitdone = Standard_False;
@@ -309,7 +309,7 @@ index 9506dc44b3..54890a1c7c 100644
    parandrad.Clear();
  }
  
-@@ -261,6 +271,9 @@ Standard_Boolean  ChFiDS_FilSpine::IsConstant()const
+@@ -260,6 +270,9 @@ Standard_Boolean  ChFiDS_FilSpine::IsConstant()const
  
  Standard_Boolean  ChFiDS_FilSpine::IsConstant(const Standard_Integer IE)const 
  {
@@ -319,7 +319,7 @@ index 9506dc44b3..54890a1c7c 100644
    Standard_Real Uf = FirstParameter(IE);
    Standard_Real Ul = LastParameter(IE);
  
-@@ -370,8 +383,11 @@ void ChFiDS_FilSpine::AppendElSpine(const Handle(ChFiDS_ElSpine)& Els)
+@@ -369,8 +382,11 @@ void ChFiDS_FilSpine::AppendElSpine(const Handle(ChFiDS_ElSpine)& Els)
  
  void ChFiDS_FilSpine::AppendLaw(const Handle(ChFiDS_ElSpine)& Els)
  {
@@ -333,32 +333,11 @@ index 9506dc44b3..54890a1c7c 100644
  }
  
  static void mklaw(Law_Laws&                  res, 
-diff --git a/src/ElSLib/ElSLib.cxx b/src/ElSLib/ElSLib.cxx
-index 86d7f591f5..505d19722b 100644
---- a/src/ElSLib/ElSLib.cxx
-+++ b/src/ElSLib/ElSLib.cxx
-@@ -170,6 +170,7 @@ gp_Vec ElSLib::ConeDN (const Standard_Real    U,
- {
-    gp_XYZ Xdir = Pos.XDirection().XYZ();
-    gp_XYZ Ydir = Pos.YDirection().XYZ(); 
-+   gp_XYZ ZDir = Pos.Direction ().XYZ();
-    Standard_Real Um = U + Nu * M_PI_2;  // M_PI * 0.5
-    Xdir.Multiply(cos(Um));
-    Ydir.Multiply(sin(Um));
-@@ -181,6 +182,8 @@ gp_Vec ElSLib::ConeDN (const Standard_Real    U,
-    }
-    else if(Nv == 1) { 
-      Xdir.Multiply(sin(SAngle));
-+     ZDir.Multiply(cos(SAngle));
-+     Xdir.Add(ZDir);
-      return gp_Vec(Xdir);     
-    }
-    return gp_Vec(0.0,0.0,0.0);
 diff --git a/src/Extrema/Extrema_ExtCC.cxx b/src/Extrema/Extrema_ExtCC.cxx
-index ed158a699d..f443d2583a 100644
+index def27cbe5e..12a0b43d15 100644
 --- a/src/Extrema/Extrema_ExtCC.cxx
 +++ b/src/Extrema/Extrema_ExtCC.cxx
-@@ -366,7 +366,7 @@ void Extrema_ExtCC::Points(const Standard_Integer N,
+@@ -358,7 +358,7 @@ void Extrema_ExtCC::Points(const Standard_Integer N,
  			    Extrema_POnCurv& P1,
  			    Extrema_POnCurv& P2) const
  {
@@ -368,10 +347,10 @@ index ed158a699d..f443d2583a 100644
      throw Standard_OutOfRange();
    }
 diff --git a/src/GeomFill/GeomFill_SectionPlacement.cxx b/src/GeomFill/GeomFill_SectionPlacement.cxx
-index 163429828c..ffc53edb2a 100644
+index a2616b4b1d..59982c9865 100644
 --- a/src/GeomFill/GeomFill_SectionPlacement.cxx
 +++ b/src/GeomFill/GeomFill_SectionPlacement.cxx
-@@ -644,7 +644,7 @@ void GeomFill_SectionPlacement::Perform(const Handle(Adaptor3d_Curve)& Path,
+@@ -607,7 +607,7 @@ void GeomFill_SectionPlacement::Perform(const Handle(Adaptor3d_Curve)& Path,
  			    myAdpSection.LastParameter(),
  			    Path->Resolution(Tol/100), 
  			    myAdpSection.Resolution(Tol/100));
@@ -381,10 +360,10 @@ index 163429828c..ffc53edb2a 100644
  	    for (ii=1; ii<=Ext.NbExt(); ii++) {
  	      distaux = sqrt (Ext.SquareDistance(ii));
 diff --git a/src/GeomPlate/GeomPlate_BuildAveragePlane.cxx b/src/GeomPlate/GeomPlate_BuildAveragePlane.cxx
-index c058110ec1..7b7e9cdeea 100644
+index 557906d138..9b1dcb05c1 100644
 --- a/src/GeomPlate/GeomPlate_BuildAveragePlane.cxx
 +++ b/src/GeomPlate/GeomPlate_BuildAveragePlane.cxx
-@@ -436,7 +436,7 @@ void GeomPlate_BuildAveragePlane::BasePlan(const gp_Vec& OZ)
+@@ -434,7 +434,7 @@ void GeomPlate_BuildAveragePlane::BasePlan(const gp_Vec& OZ)
            || ((Abs(n2)<=myTol)&&(Abs(n3)<=myTol))
            || ((Abs(n1)<=myTol)&&(Abs(n3)<=myTol))) {
        myOX.SetCoord(V3(1),V3(2),V3(3));
@@ -415,3 +394,15 @@ index 15d1f03d3f..87f2cabb3c 100644
    return thecurrentnode->GetItem();
  }
  
+diff --git a/src/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.cxx b/src/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.cxx
+index fe63901416..304fffe5bb 100644
+--- a/src/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.cxx
++++ b/src/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.cxx
+@@ -3511,6 +3511,7 @@ void ShapeUpgrade_UnifySameDomain::IntUnifyFaces(const TopoDS_Shape& theInpShape
+               
+               ReconstructMissedSeam (RemovedEdges, F_RefFace, CurEdge, CurVertex, CurPoint,
+                                      Uperiod, Vperiod, NextEdge, NextPoint);
++              if (NextEdge.IsNull()) return; //return, break or continue?
+             }
+             else
+               return;
