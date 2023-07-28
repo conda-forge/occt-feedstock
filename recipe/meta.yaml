@@ -13,7 +13,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=V{{ version.replace(".", "_") }};sf=tgz
-  sha256: 9b7b12a7be774ed31a08d3d825e1c598dfe33575f824aea00be225f71586ee82
+  sha256: 3341bfa49bb1b09bb9811934ac8802d7bdff5f1235111a660ad5a382bff47726
   patches:
     - patches/blobfish.patch
 
