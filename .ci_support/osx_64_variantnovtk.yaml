@@ -19,4 +19,4 @@ target_platform:
 variant:
 - novtk
 vtk:
-- 9.2.5
+- 9.2.6
