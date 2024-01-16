@@ -346,19 +346,6 @@ index def27cbe5e..12a0b43d15 100644
    {
      throw Standard_OutOfRange();
    }
-diff --git a/src/GeomFill/GeomFill_SectionPlacement.cxx b/src/GeomFill/GeomFill_SectionPlacement.cxx
-index a2616b4b1d..59982c9865 100644
---- a/src/GeomFill/GeomFill_SectionPlacement.cxx
-+++ b/src/GeomFill/GeomFill_SectionPlacement.cxx
-@@ -607,7 +607,7 @@ void GeomFill_SectionPlacement::Perform(const Handle(Adaptor3d_Curve)& Path,
- 			    myAdpSection.LastParameter(),
- 			    Path->Resolution(Tol/100), 
- 			    myAdpSection.Resolution(Tol/100));
--	  if (Ext.IsDone()) {
-+	  if (Ext.IsDone() && !Ext.IsParallel()) {
- 	    Extrema_POnCurv P1, P2;
- 	    for (ii=1; ii<=Ext.NbExt(); ii++) {
- 	      distaux = sqrt (Ext.SquareDistance(ii));
 diff --git a/src/GeomPlate/GeomPlate_BuildAveragePlane.cxx b/src/GeomPlate/GeomPlate_BuildAveragePlane.cxx
 index 557906d138..9b1dcb05c1 100644
 --- a/src/GeomPlate/GeomPlate_BuildAveragePlane.cxx
@@ -393,16 +380,3 @@ index 15d1f03d3f..87f2cabb3c 100644
 +    throw Standard_OutOfRange();
    return thecurrentnode->GetItem();
  }
- 
-diff --git a/src/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.cxx b/src/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.cxx
-index fe63901416..304fffe5bb 100644
---- a/src/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.cxx
-+++ b/src/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.cxx
-@@ -3511,6 +3511,7 @@ void ShapeUpgrade_UnifySameDomain::IntUnifyFaces(const TopoDS_Shape& theInpShape
-               
-               ReconstructMissedSeam (RemovedEdges, F_RefFace, CurEdge, CurVertex, CurPoint,
-                                      Uperiod, Vperiod, NextEdge, NextPoint);
-+              if (NextEdge.IsNull()) return; //return, break or continue?
-             }
-             else
-               return;
