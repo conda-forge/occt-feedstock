@@ -1,5 +1,5 @@
 {% set name = "occt" %}
-{% set version = "7.8.0" %}
+{% set version = "7.8.1" %}
 {% set build = 0 %}
 
 {% set build = build + 100 %}   # [variant == "novtk"]
@@ -13,7 +13,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=V{{ version.replace(".", "_") }};sf=tgz
-  sha256: e6aee3adc653e667e4881333f088778d8ddc0099d9898972af3b44b0235cd6bb
+  sha256: 006319a932cb8d76f32455bf4524eca2100657cb0cc65526754fd8da83b3924f
   patches:
     - patches/blobfish.patch
 
