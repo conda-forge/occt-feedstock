@@ -1,6 +1,6 @@
 {% set name = "occt" %}
 {% set version = "7.8.1" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 {% set build = build + 100 %}   # [variant == "novtk"]
 {% set build = build + 200 %}   # [variant == "all"]
@@ -15,7 +15,26 @@ source:
   url: http://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=V{{ version.replace(".", "_") }};sf=tgz
   sha256: 006319a932cb8d76f32455bf4524eca2100657cb0cc65526754fd8da83b3924f
   patches:
-    - patches/blobfish.patch
+    # blobfish
+    - patches/0001-cmake-Don-t-try-to-write-to-install-directory.-You-k.patch
+    - patches/0002-GeomPlate_BuildAveragePlane-BasePlan-Don-t-set-yvect.patch
+    - patches/0003-BRepFill_Filling-WireFromList-We-can-t-assume-that-a.patch
+    - patches/0004-BRepFill_Filling-Curve-constraints-confused-by-impli.patch
+    - patches/0005-BRepFill_Filling-Don-t-even-attempt-to-build-with-em.patch
+    - patches/0006-BRepOffset_Tool-TryProject-Check-return-of-BRepLib-B.patch
+    - patches/0007-ChFi3d_Builder-ChFi3d_ComputeCurves-set-tolreached-f.patch
+    - patches/0008-BRepLib-MakeEdge-Setting-closed-flag-of-generated-ed.patch
+    - patches/0009-BRepFill_CompatibleWires-segfault.-See-following.patch
+    - patches/0010-BRepFill_OffsetWire-segfault.-See-following.patch
+    - patches/0011-ChFiDS_FilSpine-Allow-usage-of-externally-assigned-l.patch
+    # disabled due to abi incompatibility
+    #- patches/0012-Allow-blending-of-faces-less-than-5-degrees.-See-fol.patch
+    - patches/0013-BRepFill_PipeShell-Fix-segfault-with-line-as-profile.patch
+    - patches/0015-build-Expand-preprocessor-conditional-on-non-standar.patch
+    - patches/0016-IntPatch_Intersection-Consider-intersection-of-a-clo.patch
+    - patches/0017-ChFi3d_Builder-Fix-blend-across-seam.-See-following.patch
+    # see https://tracker.dev.opencascade.org/view.php?id=33576 and https://github.com/FreeCAD/FreeCAD/issues/9760
+    - patches/0018-Fix-0033576-BRepTools_NurbsConvertModification-NewPo.patch
 
 build:
   number: {{ build }}
