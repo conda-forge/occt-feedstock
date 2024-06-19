@@ -51,7 +51,7 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
-    - cmake 3.18
+    - cmake
     - ninja
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('libxi-devel') }}       # [linux]
