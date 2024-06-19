@@ -13,6 +13,7 @@ cmake -S . -B build  -G Ninja \
       -D VTK_RENDERING_BACKEND:STRING="OpenGL2" \
       -D USE_FREEIMAGE:BOOL=ON \
       -D USE_RAPIDJSON:BOOL=ON \
-      -D BUILD_RELEASE_DISABLE_EXCEPTIONS:BOOL=OFF
+      -D BUILD_RELEASE_DISABLE_EXCEPTIONS:BOOL=OFF \
+      -D QT_HOST_PATH:STRING="${PREFIX}"
 
 cmake --build build -- install
