@@ -1,6 +1,6 @@
 {% set name = "occt" %}
 {% set version = "7.6.3" %}
-{% set build = 3 %}
+{% set build = 4 %}
 
 {% set build = build + 100 %}   # [variant == "novtk"]
 {% set build = build + 200 %}   # [variant == "all"]
@@ -31,7 +31,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - cmake 3.18
+    - cmake
     - ninja
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('libxi-devel') }}       # [linux]
