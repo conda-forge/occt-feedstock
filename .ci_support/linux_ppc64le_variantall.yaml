@@ -19,4 +19,4 @@ target_platform:
 variant:
 - all
 vtk:
-- 9.2.6
+- 9.3.0
