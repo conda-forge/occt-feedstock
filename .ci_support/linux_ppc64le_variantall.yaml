@@ -11,7 +11,7 @@ channel_targets:
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '12'
+- '13'
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 fontconfig:
@@ -23,7 +23,7 @@ target_platform:
 variant:
 - all
 vtk:
-- 9.3.0
+- 9.3.1
 zip_keys:
 - - c_stdlib_version
   - cdt_name

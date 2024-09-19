@@ -13,7 +13,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '16'
+- '17'
 fontconfig:
 - '2'
 freetype:
@@ -25,4 +25,4 @@ target_platform:
 variant:
 - all
 vtk:
-- 9.3.0
+- 9.3.1
