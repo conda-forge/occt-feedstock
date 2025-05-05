@@ -27,4 +27,4 @@ target_platform:
 variant:
 - all
 vtk:
-- 9.3.1
+- 9.4.1
