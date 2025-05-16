@@ -22,9 +22,5 @@ occt:
 - 7.8.1
 target_platform:
 - linux-ppc64le
-tbb_devel:
-- '2021'
 variant:
-- all
-vtk:
-- 9.4.1
+- novtk
