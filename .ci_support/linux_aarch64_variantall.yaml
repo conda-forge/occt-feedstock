@@ -22,6 +22,8 @@ occt:
 - 7.8.1
 target_platform:
 - linux-aarch64
+tbb_devel:
+- '2021'
 variant:
 - all
 vtk:
