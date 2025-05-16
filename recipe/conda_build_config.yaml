@@ -1,3 +1,3 @@
 variant:
   - novtk
-  - all
+  - all  #[not ppc64le]
