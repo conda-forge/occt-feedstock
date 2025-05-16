@@ -24,6 +24,8 @@ occt:
 - 7.8.1
 target_platform:
 - osx-64
+tbb_devel:
+- '2021'
 variant:
 - novtk
 vtk:
