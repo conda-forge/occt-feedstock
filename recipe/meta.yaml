@@ -14,7 +14,8 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/Open-Cascade-SAS/OCCT/archive/refs/tags/V{{ version.replace(".", "_") }}.tar.gz
   sha256: 151b7a522ba8220aed3009e440246abbaf2ffec42672c37e9390096f7f2c098d
-  # patches:
+  patches:
+    - patches/switch-vtk-freetype-cmake-order.patch
   #   # blobfish
   #   - patches/0001-cmake-Don-t-try-to-write-to-install-directory.-You-k.patch
   #   - patches/0002-GeomPlate_BuildAveragePlane-BasePlan-Don-t-set-yvect.patch
