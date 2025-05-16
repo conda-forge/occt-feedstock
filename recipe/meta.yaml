@@ -62,7 +62,7 @@ requirements:
     - freetype
     - libgl-devel                   # [linux]
     - rapidjson
-    - tbb-devel                     # [win and variant=='all']
+    - tbb-devel                     # [variant=='all']
     - vtk                           # [variant=='all']
     - xorg-libx11                   # [linux]
     - xorg-libxt                    # [linux]
