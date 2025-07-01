@@ -5,7 +5,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2019
+- vs2022
 fontconfig:
 - '2'
 freetype:
@@ -19,4 +19,4 @@ tbb_devel:
 variant:
 - all
 vtk:
-- 9.4.1
+- 9.4.2
