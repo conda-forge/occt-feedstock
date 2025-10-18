@@ -1,5 +1,5 @@
 {% set name = "occt" %}
-{% set version = "7_9_2" %}
+{% set version = "7.9.2" %}
 {% set build = 0 %}
 
 {% set build = build + 100 %}   # [variant == "novtk"]
