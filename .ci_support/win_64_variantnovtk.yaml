@@ -10,8 +10,6 @@ fontconfig:
 - '2'
 freetype:
 - '2'
-occt:
-- 7.8.1
 target_platform:
 - win-64
 tbb_devel:
