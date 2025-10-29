@@ -15,7 +15,7 @@ source:
 build:
   variant:
     down_prioritize_variant: ${{ 0 if variant == 'all' else 1 }}
-  number: 1
+  number: 300
   string: ${{ variant }}_h${{ PKG_HASH }}_${{ build }}
   script:
     file: build${{ '.sh' if unix else '.bat' }}
