@@ -9,7 +9,7 @@ package:
 
 source:
   file_name: ${{ name }}-${{ version }}.tar.gz
-  url: https://github.com/Open-Cascade-SAS/OCCT/archive/refs/tags/V${{ version.replace(".", "_") }}.tar.gz
+  url: https://github.com/Open-Cascade-SAS/OCCT/archive/refs/tags/V${{ version | replace(".", "_") }}.tar.gz
   sha256: 4267945386dde942cfc53da6bf25bffc79cc88aad643e124edc398dc1bb7732e
   patches:
     - patches/switch-vtk-freetype-cmake-order.patch
@@ -26,7 +26,7 @@ requirements:
   run_exports:
     # ABI changes between minor versions, see e.g.
     # https://github.com/conda-forge/occt-feedstock/issues/97
-    - ${{ pin_subpackage('occt', max_pin='x.x.x') }}
+    - ${{ pin_subpackage('occt', upper_bound='x.x.x', lower_bound='x.x.x') }}
   build:
     - ${{ compiler('cxx') }}
     - ${{ stdlib("c") }}
@@ -64,14 +64,15 @@ requirements:
         - vtk
 
 tests:
-  requirements:
-    run:
-      - ninja
-      - cmake
-  files:
-    - CMakeLists.txt
-  script:
-    - cmake -G "Ninja" .
+  - requirements:
+      run:
+        - ninja
+        - cmake
+    files:
+      recipe:
+        - CMakeLists.txt
+    script:
+      - cmake -G "Ninja" .
 
 about:
   homepage: https://www.opencascade.com/
