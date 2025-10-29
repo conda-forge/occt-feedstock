@@ -1,0 +1,93 @@
+context:
+  name: occt
+  version: '7.9.2'
+  build: 0
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  file_name: ${{ name }}-${{ version }}.tar.gz
+  url: https://github.com/Open-Cascade-SAS/OCCT/archive/refs/tags/V${{ version.replace(".", "_") }}.tar.gz
+  sha256: 4267945386dde942cfc53da6bf25bffc79cc88aad643e124edc398dc1bb7732e
+  patches:
+    - patches/switch-vtk-freetype-cmake-order.patch
+
+build:
+  number: ${{ build + 100 if variant == 'novtk' else build + 200 }}
+  string: ${{ variant }}_h${{ PKG_HASH }}_${{ build }}
+  script:
+    file: build${{ '.sh' if unix else '.bat' }}
+    env:
+      USE_VTK: ${{ 'ON' if variant == 'all' else 'OFF' }}
+
+requirements:
+  run_exports:
+    # ABI changes between minor versions, see e.g.
+    # https://github.com/conda-forge/occt-feedstock/issues/97
+    - ${{ pin_subpackage('occt', max_pin='x.x.x') }}
+  build:
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
+    - cmake
+    - ninja
+    - if: linux
+      then:
+        - ${{ cdt('libxext-devel') }}
+        - ${{ cdt('libxi-devel') }}
+  host:
+    - fontconfig
+    - freeimage
+    - freetype
+    - if: linux
+      then:
+        - libgl-devel
+        - xorg-libx11
+        - xorg-libxt
+        - xorg-xorgproto
+    - rapidjson
+    - if: variant == 'all'
+      then:
+        - tbb-devel
+        - vtk
+  run:
+    - freetype
+    - freeimage
+    - fontconfig
+    - if: linux
+      then:
+        - xorg-libxt
+    - rapidjson
+    - if: variant == 'all'
+      then:
+        - vtk
+
+tests:
+  requirements:
+    run:
+      - ninja
+      - cmake
+  files:
+    - CMakeLists.txt
+  script:
+    - cmake -G "Ninja" .
+
+about:
+  homepage: https://www.opencascade.com/
+  license: LGPL-2.1-only
+  license_file: LICENSE_LGPL_21.txt
+  summary: this is the occ (opencascade) CAD-Kernel
+  description: |
+    Open Cascade Technology (OCCT), formerly called CAS.CADE
+    is an open source software development platform for 3D CAD,
+    CAM, CAE, etc. that is developed and supported by Open Cascade SAS.
+  documentation: https://www.opencascade.com/content/documentation
+  repository: http://git.dev.opencascade.org/gitweb/?p=occt.git
+
+extra:
+  recipe-maintainers:
+    - adam-urbanczyk
+    - oursland
+    - adrianinsaval
+    - looooo
