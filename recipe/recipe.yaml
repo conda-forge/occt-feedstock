@@ -1,7 +1,7 @@
 context:
   name: occt
   version: '7.9.2'
-  build: 0
+  build: 1
 
 package:
   name: ${{ name }}
@@ -10,12 +10,13 @@ package:
 source:
   file_name: ${{ name }}-${{ version }}.tar.gz
   url: https://github.com/Open-Cascade-SAS/OCCT/archive/refs/tags/V${{ version | replace(".", "_") }}.tar.gz
-  sha256: 4267945386dde942cfc53da6bf25bffc79cc88aad643e124edc398dc1bb7732e
+  sha256: 3cd080d3fc33ba0c6c157e110afe3e015859524c4694dbb09812ec9d61595639
   patches:
     - patches/switch-vtk-freetype-cmake-order.patch
 
 build:
-  number: ${{ build + 100 if variant == 'novtk' else build + 200 }}
+  variant:
+    down_prioritize_variant: ${{ 0 if variant == 'all' else 1 }}
   string: ${{ variant }}_h${{ PKG_HASH }}_${{ build }}
   script:
     file: build${{ '.sh' if unix else '.bat' }}
