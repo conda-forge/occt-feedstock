@@ -62,7 +62,7 @@ test:
   files:
     - CMakeLists.txt
   commands:
-    - cmake -G "Ninja" .
+    - cmake -G "Ninja" -DOCCT_VERSION="{{ version }}" .
 
 about:
   home: https://www.opencascade.com/
