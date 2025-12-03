@@ -21,11 +21,11 @@ freetype:
 macos_machine:
 - arm64-apple-darwin20.0.0
 occt:
-- 7.8.1
+- 7.9.1
 target_platform:
 - osx-arm64
 tbb_devel:
-- '2021'
+- '2022'
 variant:
 - all
 vtk:
