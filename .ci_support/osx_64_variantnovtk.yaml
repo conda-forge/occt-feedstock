@@ -29,4 +29,4 @@ tbb_devel:
 variant:
 - novtk
 vtk:
-- 9.5.1
+- 9.5.2
