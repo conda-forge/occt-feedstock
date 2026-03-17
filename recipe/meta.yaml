@@ -1,6 +1,6 @@
 {% set name = "occt" %}
 {% set version = "7.9.3" %}
-{% set build = 1 %}
+{% set build = 2 %}
 
 {% set build = build + 100 %}   # [variant == "novtk"]
 {% set build = build + 200 %}   # [variant == "all"]
@@ -34,8 +34,6 @@ requirements:
     - {{ stdlib("c") }}
     - cmake
     - ninja
-    - {{ cdt('libxext-devel') }}    # [linux]
-    - {{ cdt('libxi-devel') }}      # [linux]
   host:
     - fontconfig
     - freeimage
@@ -47,6 +45,8 @@ requirements:
     - xorg-libx11                   # [linux]
     - xorg-libxt                    # [linux]
     - xorg-xorgproto                # [linux]
+    - xorg-libxext                  # [linux]
+    - xorg-libxi                    # [linux]
   run:
     - freetype
     - freeimage
