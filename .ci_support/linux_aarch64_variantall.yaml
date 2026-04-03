@@ -16,8 +16,6 @@ fontconfig:
 - '2'
 freetype:
 - '2'
-occt:
-- 7.9.3
 target_platform:
 - linux-aarch64
 tbb_devel:
