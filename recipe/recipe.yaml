@@ -1,0 +1,92 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  name: occt
+  version: "7.9.3"
+  build_number: ${{ 3 + (100 if variant == "novtk" else 0) + (200 if variant == "all" else 0) }}
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/Open-Cascade-SAS/OCCT/archive/refs/tags/V${{ version | replace(".", "_") }}.tar.gz
+  sha256: 5ecf094ec6b12d5413dfb851d8c3590c354058aee556e32e408bdfbf8c357d57
+  patches:
+    - patches/switch-vtk-freetype-cmake-order.patch
+
+build:
+  number: ${{ build_number }}
+  string: ${{ variant }}_h${{ hash }}_${{ build_number }}
+  script:
+    file: ${{ "build.sh" if unix else "build.bat" }}
+    env:
+      USE_VTK: ${{ "OFF" if variant == "novtk" else "ON" }}
+
+requirements:
+  build:
+    - ${{ compiler("cxx") }}
+    - ${{ stdlib("c") }}
+    - cmake
+    - ninja
+  host:
+    - fontconfig
+    - freeimage
+    - freetype
+    - if: linux
+      then: libgl-devel
+    - rapidjson
+    - if: variant == "all"
+      then:
+        - tbb-devel
+        - vtk
+    - if: linux
+      then:
+        - xorg-libx11
+        - xorg-libxt
+        - xorg-xorgproto
+        - xorg-libxext
+        - xorg-libxi
+  run:
+    - freetype
+    - freeimage
+    - fontconfig
+    - if: linux
+      then: xorg-libxt
+    - rapidjson
+    - if: variant == "all"
+      then: vtk
+  run_exports:
+    - ${{ pin_subpackage("occt", upper_bound="x.x.x") }}
+
+tests:
+  - requirements:
+      run:
+        - ninja
+        - cmake
+    files:
+      recipe:
+        - CMakeLists.txt
+    script:
+      - cmake -G "Ninja" -DOCCT_VERSION="${{ version }}" .
+
+about:
+  homepage: https://www.opencascade.com/
+  license_family: LGPL
+  license: LGPL-2.1-only
+  license_file: LICENSE_LGPL_21.txt
+  summary: this is the occ (opencascade) CAD-Kernel
+  description: |
+    Open Cascade Technology (OCCT), formerly called CAS.CADE
+    is an open source software development platform for 3D CAD,
+    CAM, CAE, etc. that is developed and supported by Open Cascade SAS.
+  documentation: https://www.opencascade.com/content/documentation
+  repository: http://git.dev.opencascade.org/gitweb/?p=occt.git
+
+extra:
+  recipe-maintainers:
+    - adam-urbanczyk
+    - oursland
+    - adrianinsaval
+    - looooo
