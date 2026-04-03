@@ -4,7 +4,7 @@ schema_version: 1
 context:
   name: occt
   version: "7.9.3"
-  build_number: ${{ 2 + (100 if variant == "novtk" else 0) + (200 if variant == "all" else 0) }}
+  build_number: ${{ 3 + (100 if variant == "novtk" else 0) + (200 if variant == "all" else 0) }}
 
 package:
   name: ${{ name }}
