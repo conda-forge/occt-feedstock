@@ -29,4 +29,4 @@ tbb_devel:
 variant:
 - all
 vtk:
-- 9.6.0
+- 9.6.1
