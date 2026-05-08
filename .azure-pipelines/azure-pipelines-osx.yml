@@ -12,18 +12,22 @@ jobs:
         CONFIG: osx_64_variantall
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_64_variantnovtk:
         CONFIG: osx_64_variantnovtk
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_arm64_variantall:
         CONFIG: osx_arm64_variantall
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_arm64_variantnovtk:
         CONFIG: osx_arm64_variantnovtk
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
   timeoutInMinutes: 360
   variables: {}
 
