@@ -22,7 +22,14 @@ Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>GitHub Actions</td>
+    <td>
+      <a href="https://github.com/conda-forge/occt-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/occt-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>
@@ -36,41 +43,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_variantall</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=709&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/occt-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_variantall" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_variantnovtk</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=709&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/occt-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_variantnovtk" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64_variantall</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=709&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/occt-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_variantall" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64_variantnovtk</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=709&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/occt-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_variantnovtk" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=709&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/occt-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64_variantall</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=709&branchName=main">
@@ -82,20 +54,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=709&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/occt-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_variantnovtk" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_variantall</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=709&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/occt-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_variantall" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_variantnovtk</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=709&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/occt-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_variantnovtk" alt="variant">
                 </a>
               </td>
             </tr><tr>
