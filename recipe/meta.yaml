@@ -1,6 +1,6 @@
 {% set name = "occt" %}
-{% set version = "8.0.0" %}
-{% set build = 2 %}
+{% set version = "8_0_1" %}
+{% set build = 0 %}
 
 {% set build = build + 100 %}   # [variant == "novtk"]
 {% set build = build + 200 %}   # [variant == "all"]
@@ -13,7 +13,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/Open-Cascade-SAS/OCCT/archive/refs/tags/V{{ version.replace(".", "_") }}.tar.gz
-  sha256: 118398ff8a010c2cb693450d7e5e2690533c88208fc25bd2730451ec4fab0a0f
+  sha256: 0d6913eae4bcc09a3653ceced6dda1aec11c35a1513d4c06762c9b002092c68a
   patches:
     - patches/switch-vtk-freetype-cmake-order.patch
 
