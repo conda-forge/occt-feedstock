@@ -11,6 +11,7 @@ jobs:
       win_64_variantall:
         CONFIG: win_64_variantall
         UPLOAD_PACKAGES: 'True'
+        build_platform: win-64
         build_workspace_dir: C:\bld\
         free_disk_space: skip
         pagefile_size: 0
@@ -20,6 +21,7 @@ jobs:
       win_64_variantnovtk:
         CONFIG: win_64_variantnovtk
         UPLOAD_PACKAGES: 'True'
+        build_platform: win-64
         build_workspace_dir: C:\bld\
         free_disk_space: skip
         pagefile_size: 0
@@ -42,6 +44,7 @@ jobs:
         PYTHONUNBUFFERED: 1
         UPLOAD_PACKAGES: $(UPLOAD_PACKAGES)
         UPLOAD_TEMP: $(UPLOAD_TEMP)
+        build_platform: $(build_platform)
         flow_run_id: azure_$(Build.BuildNumber).$(System.JobAttempt)
         remote_url: $(Build.Repository.Uri)
         sha: $(Build.SourceVersion)
