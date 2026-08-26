@@ -13,7 +13,7 @@ fontconfig:
 freetype:
 - '2'
 occt:
-- 7.9.3
+- 8.0.0
 target_platform:
 - win-64
 tbb_devel:
@@ -21,4 +21,4 @@ tbb_devel:
 variant:
 - all
 vtk:
-- 9.6.2
+- 9.7.0

@@ -13,7 +13,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '19'
+- '21'
 expat:
 - '2'
 fontconfig:
@@ -23,7 +23,7 @@ freetype:
 macos_machine:
 - arm64-apple-darwin20.0.0
 occt:
-- 7.9.3
+- 8.0.0
 target_platform:
 - osx-arm64
 tbb_devel:
@@ -31,4 +31,4 @@ tbb_devel:
 variant:
 - all
 vtk:
-- 9.6.2
+- 9.7.0
