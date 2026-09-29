@@ -13,7 +13,7 @@ fontconfig:
 freetype:
 - '2'
 occt:
-- 8.0.0
+- 8.0.1
 target_platform:
 - win-64
 tbb_devel:

@@ -23,7 +23,7 @@ freetype:
 macos_machine:
 - x86_64-apple-darwin13.4.0
 occt:
-- 8.0.0
+- 8.0.1
 target_platform:
 - osx-64
 tbb_devel:
