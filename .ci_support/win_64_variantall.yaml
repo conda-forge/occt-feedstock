@@ -5,7 +5,9 @@ channel_sources:
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2022
+- vs
+cxx_compiler_version:
+- '2022'
 expat:
 - '2'
 fontconfig:
@@ -13,7 +15,7 @@ fontconfig:
 freetype:
 - '2'
 occt:
-- 8.0.0
+- 8.0.1
 target_platform:
 - win-64
 tbb_devel:
