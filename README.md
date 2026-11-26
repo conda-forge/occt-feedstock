@@ -9,7 +9,7 @@ Package license: LGPL-2.1-only
 
 Summary: this is the occ (opencascade) CAD-Kernel
 
-Development: http://git.dev.opencascade.org/gitweb/?p=occt.git
+Development: https://github.com/Open-Cascade-SAS/OCCT
 
 Documentation: https://www.opencascade.com/content/documentation
 
