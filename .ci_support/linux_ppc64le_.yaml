@@ -21,7 +21,7 @@ fontconfig:
 freetype:
 - '2'
 occt:
-- 8.0.1
+- 8.0.2
 target_platform:
 - linux-ppc64le
 variant:
